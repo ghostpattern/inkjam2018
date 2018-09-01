@@ -3,7 +3,6 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// An Editor-Time asset for loading Scenes. A runtime version will need to be built.
@@ -34,6 +33,11 @@ public class SceneData : ScriptableObject
 		for (int i = 0; i < loader.sceneList.Count; i++)
 		{
 			SceneAsset sceneAsset = loader.sceneList[i];
+			if (sceneAsset == null)
+			{
+				Debug.Log($"Scene is missing from list on {AssetDatabase.GetAssetPath(loader)}");
+				continue;
+			}
 			EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(sceneAsset), i == 0 ? OpenSceneMode.Single : OpenSceneMode.Additive);
 		}
 
