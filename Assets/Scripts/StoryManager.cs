@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using Ink.Runtime;
 
@@ -161,9 +162,55 @@ public class StoryManager : MonoBehaviour
 
             return true;
         }
-        else if(string.Compare(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase) == 0)
+        if(string.Compare(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase) == 0)
         {
-            
+            if(colonSplit.Length > 1)
+            {
+                if(string.Equals(colonSplit[1], "fadein", StringComparison.OrdinalIgnoreCase))
+                {
+                    float fadeTime = 0.0f;
+                    if(colonSplit.Length > 2)
+                    {
+                        float.TryParse(colonSplit[2], out fadeTime);
+                    }
+
+                    StorySceneManager.Instance.FadeIn(fadeTime);
+                }
+                else if(string.Equals(colonSplit[1], "fadeout", StringComparison.OrdinalIgnoreCase))
+                {
+                    float fadeTime = 0.0f;
+                    if(colonSplit.Length > 2)
+                    {
+                        float.TryParse(colonSplit[2], out fadeTime);
+                    }
+
+                    StorySceneManager.Instance.FadeOut(fadeTime);
+                }
+            }
+
+            return true;
+        }
+        if(string.Compare(colonSplit[0], "scene", StringComparison.OrdinalIgnoreCase) == 0)
+        {
+            if(colonSplit.Length > 2)
+            {
+                if(string.Equals(colonSplit[1], "load", StringComparison.OrdinalIgnoreCase))
+                {
+                    float delay = 0.0f;
+                    if(colonSplit.Length > 3)
+                    {
+                        float.TryParse(colonSplit[3], out delay);
+                    }
+
+                    int sceneNumber;
+                    if(int.TryParse(colonSplit[2], out sceneNumber))
+                    {
+                        StorySceneManager.Instance.LoadScene(sceneNumber, delay);
+                    }
+                }
+            }
+
+            return true;
         }
 
         return false;

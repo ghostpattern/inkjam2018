@@ -6,6 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/0. Master/Master Scene.unity
+    guid: 927c4eafa07cbc64d96e8be00e6a17a9
+  - enabled: 1
+    path: Assets/Scenes/1. Port/1. Port.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/2. Above/2. Above.unity
+    guid: 93cc499a6266dfb49baf5ef346c60107
+  - enabled: 1
+    path: Assets/Scenes/3. Deck/3. Deck.unity
+    guid: ac1563aa5d2ad314b90bbccb4cd988c4
+  - enabled: 1
+    path: Assets/Scenes/4. Room/4. Room.unity
+    guid: 08c06213c8c574c4d9827a885b0243c7
+  - enabled: 1
+    path: Assets/Scenes/5. Bridge/5. Bridge.unity
+    guid: 78a5e6b37545ee545acab4d5be920c67
+  - enabled: 1
+    path: Assets/Scenes/6. Radio/6. Radio.unity
+    guid: fa909c0ea6993e0419c91152228a2e16
+  - enabled: 1
+    path: Assets/Scenes/7. Cable/7. Cable.unity
+    guid: 784cb5b475cec8a4da82e9be9d1ace08
+  - enabled: 1
+    path: Assets/Scenes/8. Deck-Storm/8. Deck-Storm.unity
+    guid: 0da79969b9cf6954697891163a1ff454
+  - enabled: 1
+    path: Assets/Scenes/9. Clouds/9. Clouds.unity
+    guid: dee19802cac1b284da8d403070637a8d
+  - enabled: 1
+    path: Assets/Scenes/10. Sunset/10. Sunset.unity
+    guid: 3dffc5270e6a4d24294498f1387dd12e
   m_configObjects: {}
