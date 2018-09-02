@@ -58,7 +58,7 @@ Shader "Lightning"
 }
 /*ASEBEGIN
 Version=15600
-2716;137;2234;1182;3043.467;872.1511;2.576949;True;True
+2699;116;2234;1212;3043.467;910.8054;2.576949;True;True
 Node;AmplifyShaderEditor.RangedFloatNode;6;-1844.847,461.7031;Float;False;Property;_Progression;Progression;3;0;Create;True;0;0;False;0;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.CommentaryNode;46;-1529.531,-388.2472;Float;False;1650.919;424.8987;Fade Out Tendrils;8;51;52;47;48;43;42;41;49;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.TFHCRemapNode;49;-1435.765,-270.9336;Float;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0.6;False;3;FLOAT;0;False;4;FLOAT;1;False;1;FLOAT;0
@@ -138,4 +138,4 @@ WireConnection;38;1;35;0
 WireConnection;2;2;31;0
 WireConnection;2;10;38;0
 ASEEND*/
-//CHKSM=729EE7A458470429781DA6E1F62FDA9583B26F7E
+//CHKSM=D33D5CF1274D043034DA84ED0654BAFCFC6F438E
