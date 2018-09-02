@@ -31,6 +31,8 @@ Do you see it?
 * See it?
 
 - Visual: Start Scene 1 // ship moored above town
+Audio: FadeUp scene1_loop_rain 1
+Audio: FadeUp scene1_loop_town 1
 
 The ship as it once was, decades ago! Majestic and proud, flying above the harbour.
 
@@ -42,6 +44,8 @@ Rio. Beautiful Rio de Janeiro, after the war.
 
 It was, as it always is, a dark and stormy night.
 
+Audio: Play lightning
+
 The passengers and crew were all down in the town - it wasn’t safe up on the ship!
 
 In fact, that’s what our heroes were counting on…
@@ -50,17 +54,26 @@ In fact, that’s what our heroes were counting on…
 
 - Visual: Start Scene 2
 
+Audio: FadeDown scene1_loop_rain 1
+Audio: FadeDown scene1_loop_town 1
+
 Yes, just like superheroes!
 
 They are the ones speaking to us.
 
+Audio: FadeUp scene2_loop_parachute 0.5
+
 I see.. Two figures. Two small figures above the vast Pacific ocean, floating down amongst of the storm.
+
+Audio: FadeUp scene2_loop_rainthunder 0.5
 
 It’s some miracle the lightning doesn’t fry their parachutes, but they’ve risked death before.
 
 Clad in black, these swashbuckling vagabonds fly grim-faced towards the massive blimp.
 
-Audio: Play AARK
+Audio: FadeDown scene2_loop_parachute 0.2
+Audio: FadeDown scene2_loop_rainthunder 0.2
+Audio: Play AARK 0.2
 
 AARK!
 
@@ -79,11 +92,20 @@ Yes, their faithful and trusty parrot, Kiddo, who accompanied them on every adve
 
 Anyway!
 
+Audio: FadeUp scene2_loop_parachute 0.2
+Audio: FadeUp scene2_loop_rainthunder 0.2
+
 They slammed into the balloon’s canvas, bouncing against it, the wind whipping their parachutes around..
+
+Audio: Play Slam
 
 The deck came up to meet them and they slammed down hard.
 
 Visual: Start Scene 3
+
+Audio: FadeDown scene2_loop_parachute 0.2
+Audio: FadeDown scene2_loop_rainthunder 0.2
+Audio: FadeUp scene3_loop_rain 1
 
 They struggled to their feet amidst the pouring rain, soaked and sopping wet, but determined.
 
@@ -160,6 +182,8 @@ The heroes knew, however, that in his safe, in his room on the ship, were papers
 * What happened next?
 
 - Visual: Fade down
+Audio: FadeDown scene3_loop_rain 05
+Audio: FadeUp scene45_loop_rain
 
 They moved straight into action, and, finding a maintenance hatch, infiltrated the first class deck.
 
@@ -189,12 +213,14 @@ Can you hear them? How did they do it?
 
 	* * Under the bed.
 
-		The pulled the mattress up, looked under every slat, but found nothing.
+		Audio: Play Mattress
+		They pulled the mattress up, looked under every slat, but found nothing.
 
 		-> the_code
 
 * * In the desk.
 	
+	Audio: Play Desk
 	They pulled open every drawer, finding note paper, fancy pens and inkwells (they used them back in those days.
 
 	But no safe codes!
@@ -203,6 +229,7 @@ Can you hear them? How did they do it?
 	
 	* * On the bookshelf.
 
+	Audio: Play Booshelf
 	They flicked through the every books, searching the margins for clues.
 
 But other than discovering some dirty doodles, it was a fruitless endeavour. 
@@ -211,6 +238,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		
 	* * Under the chair.
 
+		Audio: Play Chair
 		What - you mean, under the seat?
 
 		Nothing there, unfortunately!
@@ -219,6 +247,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		
 	* * Among his notes.
 
+		Audio: Play Notes
 		Ooh this might be the ticket…
 
 		They went through his notes, and pocketed a few that had some salacious details on other foul characters of the bourgeoisie, but nope - no code!
@@ -227,6 +256,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		
 	* * In the vase.
 
+		Audio: Play Vase
 		They pulled out the flowers from the vase and examined each stem - maybe he’d absentmindedly carved the code one day on a flower-stem!
 
 		But as likely as that would be, no code was forthcoming.
@@ -237,11 +267,14 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 
 * They picked the lock!
 	
+	Audio: Play Safelock
 	Ah yes you’re right - the smaller vagabond had learned the fine art of lockpicking as a child.. but that’s another story.
 
 	She put her ear to the safe and felt for the tell-tale clicks…
 
 	Visual: Open Safe
+	Audio: Play Safeopen
+
 
 	And in minutes she had it open - the papers were theirs!
 
@@ -265,21 +298,28 @@ What parrot?
 
 Oh, right, the parrot! 
 
+Audio: Play Ark
+
 It had been with them the whole time of course, and, with a pat for luck from the bigger brigand, it climbed into a nearby vent.
 
+Audio: Play Parrotvent
 They heard it valiantly hop through the maze of ducts, squawking as it hit crossroads or dead ends..
 
 The syndicalists stood there patiently for several minutes.
 
 Visual: Open Door
+Audio: Play Dooropen
 
 But they knew they could trust the parrot.
 
 - Visual: Start Scene 6
+Audio: FadeDown scene45_loop_rain 0.5
+Audio: FadeUp scene6_loop_rain 0.5
 
 They were in - they sat down with the manifesto in hand in front of the radio transmitter and prepared to broadcast.
 
 But when they activated the transmitter, sparks jumped and fizzled - the device had been burnt to a crisp, by a bolt of lightning no doubt.
+Audio: Play Radio
 
 So, what would they do?
 
@@ -290,6 +330,8 @@ So, what would they do?
 They could still take a hammer and sickle to the system!
 
 Visual: Start Scene 7
+Audio: FadeDown scene6_loop_rain 0.2
+Audio: FadeUp scene7_loop_rainwind 0.2
 
 They clambered down the side of the ship, lashed by the icy wind.
 
@@ -298,7 +340,7 @@ They got to the cable and, through some pretty impressive cooperative gymnastics
 The lights of the town winked in the distance.
 
 They lit the fuse…
-
+Audio: FadeDown scene7_loop_rainwind 0.5
 Visual: Fade down
 
 Audio: Play Explosion
@@ -306,7 +348,7 @@ Audio: Play Explosion
  The severed cable whipped away into the night.
 
 Visual: Start Scene 8
-
+Audio: FadeUp scene8_loop_rainstorm 0.5
 The vagabonds clambered back on to the deck, their mission completed.
 
 At this point, their pilot was meant to double back, and they would organise some kind of daring escape.
@@ -318,6 +360,9 @@ But still, there was a chance.
 So they waited, and they watched.
 
 Visual: Start Scene 9
+Audio: FadeIn scene9_loop_thunder 0.2
+Audio: FadeIn scene910_loop_wind 0.2
+Audio: FadeDown scene8_loop_rainstorm 0.2
 
 The ship drifted through the storm, through the clouds.
 
@@ -334,9 +379,11 @@ But! Not straight away of course.
 Oh no.
 
 Visual: Start Scene 10
+Audio: FadeDown scene9_loop_thunder 0.2
 
 They in fact, could’ve lived for many years on the wayward vessel!
 
+Audio: Play Gull
 The food stores were stocked, and they, uh, learned to hunt seabirds! Seagulls and albatrosses and the like.
 
 And the uh, the parrot was still around! It could scavenge for food - you know, brought up herbs and other plants.
@@ -372,5 +419,7 @@ Now as my mother always said, butts are for goats.
 You run along now.
 
 It’s just about time for my nap.
+
+Audio: FadeDown scene910_loop_wind 1
 
 -> DONE
