@@ -111,8 +111,8 @@ public class StoryManager : MonoBehaviour
                 float.TryParse(colonSplit[2], out delayTime);
             }
             Debug.LogFormat("Playing audio: {0} with delay of {1}", colonSplit[1], delayTime);
-            InkAudioTrigger[] audioTriggers = FindObjectsOfType<InkAudioTrigger>();
-            foreach(InkAudioTrigger inkAudioTrigger in audioTriggers)
+            InkAudioLink[] audioLinks = FindObjectsOfType<InkAudioLink>();
+            foreach(InkAudioLink inkAudioTrigger in audioLinks)
             {
                 if(string.Equals(colonSplit[1], inkAudioTrigger.Key))
                 {
@@ -129,6 +129,10 @@ public class StoryManager : MonoBehaviour
             }
 
             return true;
+        }
+        else if(string.Compare(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase) == 0)
+        {
+            
         }
 
         return false;

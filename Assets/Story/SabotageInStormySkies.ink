@@ -60,7 +60,7 @@ It’s some miracle the lightning doesn’t fry their parachutes, but they’ve 
 
 Clad in black, these swashbuckling vagabonds fly grim-faced towards the massive blimp.
 
-Audio: AARK
+Audio: Play AARK
 
 AARK!
 
@@ -301,7 +301,7 @@ They lit the fuse…
 
 Visual: Fade down
 
-Audio: Explosion
+Audio: Play Explosion
 
  The severed cable whipped away into the night.
 

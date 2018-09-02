@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InkAudioTrigger : MonoBehaviour
+public class InkAudioLink : MonoBehaviour
 {
     public string Key;
     [SerializeField]
