@@ -33,6 +33,7 @@ Do you see it?
 - Scene: Load 1 // ship moored above town
 Visual: FadeIn 1.0
 Audio: FadeUp scene1_loop_rain 1
+Delay: 0.5
 
 The ship as it once was, decades ago! Majestic and proud, flying above the harbour.
 
@@ -67,8 +68,8 @@ I see.. Two figures. Two small figures above the vast Atlantic ocean, floating d
 
 Audio: FadeUp scene2_loop_rainthunder 0.5
 
-Visual: trigger lightning 1.25
-Audio: play scene2_os_lightning 1.25
+Visual: trigger lightning 3.0
+Audio: play scene2_os_lightning 3.0
 It's some miracle the lightning doesn't fry their parachutes, but they've risked death before.
 
 Clad in black, these swashbuckling vagabonds fly grim-faced towards the massive blimp.
@@ -93,7 +94,7 @@ The parrot!
 
 Visual: Show parrot 0.5
 
-Yes, their faithful and trusty parrot, Kiddo, who accompanied them on every adventure.
+Yes, their faithful and trusty parrot, who accompanied them on every adventure.
 
 Anyway!
 
@@ -194,7 +195,7 @@ They moved straight into action, and, finding a maintenance hatch, infiltrated t
 
 The gilded finery sickened them, as they thought of the suffering and need back home.
 
-They were wary of being spotted, even though no one was meant to be on board, because--
+They were wary of being spotted, even though no one was meant to be on board, because-- [0s]
 
 * Because of the storm.
 
@@ -272,19 +273,19 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		-> the_code
 
 * They picked the lock!
-	
-	Audio: Play scene4_os_safelock
-	Ah yes you're right - the smaller vagabond had learned the fine art of lockpicking as a child.. but that's another story.
+- 	
+Audio: Play scene4_os_safelock
+Ah yes you're right - the smaller vagabond had learned the fine art of lockpicking as a child.. but that's another story.
 
-	She put her ear to the safe and felt for the tell-tale clicks...
+She put her ear to the safe and felt for the tell-tale clicks...
 
-	Audio: Play scene4_os_safeopen
-	Visual: Animate Safe Safeopen
+Audio: Play scene4_os_safeopen
+Visual: Animate Safe Safeopen
 
+And in minutes she had it open - the papers were theirs!
 
-	And in minutes she had it open - the papers were theirs!
+Delay: 1.0
 
-- 
 Visual: FadeOut 1
 
 They rushed from the Candidate's quarters to the bridge - it was time to hijack the air-ways.
@@ -323,11 +324,12 @@ Audio: Play scene5_os_dooropen
 But they knew they could trust the parrot.
 
 - 
-Visual: FadeOut 0.25
-Scene: Load 6 0.25
-Visual: FadeIn 0.25
 Audio: FadeDown scene45_loop_rain 0.5
 Audio: FadeUp scene6_loop_rain 0.5
+Visual: FadeOut 0.25
+Scene: Load 6 0.25
+Delay: 0.3
+Visual: FadeIn 0.25
 
 They were in - they sat down with the manifesto in hand in front of the radio transmitter and prepared to broadcast.
 
@@ -342,11 +344,12 @@ So, what would they do?
 
 They could still take a hammer and sickle to the system!
 
-Visual: FadeOut 0.1
-Scene: Load 7 0.1
-Visual: FadeIn 0.1
 Audio: FadeDown scene6_loop_rain 0.2
 Audio: FadeUp scene7_loop_rainwind 0.2
+Visual: FadeOut 0.1
+Scene: Load 7 0.1
+Delay: 0.125
+Visual: FadeIn 0.1
 
 They rappelled down the side of the ship, lashed about by the icy wind.
 
@@ -381,11 +384,12 @@ So the two figures stood, and they waited, and they watched.
 
 Visual: FadeOut 1.0
 Scene: Load 9 1.0
-Visual: FadeIn 1.0
+Delay: 1.0
+Audio: FadeDown scene8_loop_rainstorm 0.2
+Delay: 1.0
 Audio: FadeIn scene9_loop_thunder 0.2
 Audio: FadeIn scene910_loop_wind 0.2
-Audio: FadeDown scene8_loop_rainstorm 0.2
-Delay: 2.0
+Visual: FadeIn 1.0
 
 The ship drifted through the storm, through the clouds.
 
@@ -403,10 +407,11 @@ But! Not straight away of course.
 
 Oh no.
 
+Audio: FadeDown scene9_loop_thunder 0.2
 Visual: FadeOut 0.1
 Scene: Load 10 0.1
+Delay: 0.125
 Visual: FadeIn 0.1
-Audio: FadeDown scene9_loop_thunder 0.2
 
 In fact, they could've lived for many years on the wayward vessel!
 
@@ -427,7 +432,7 @@ On an listless floating ship, above the vast emptiness of the oceans of the worl
 
 * Why didn't they have a better escape plan?
 
-* Doesn't the ship still have its cable attached?
+* Didn't the ship wash up here with its cable attached?
 
 - Visual: FadeOut 0.5
 
