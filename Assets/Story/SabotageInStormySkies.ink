@@ -90,7 +90,7 @@ Audio: FadeUp scene2_loop_rainthunder 0.2
 
 The parrot!
 
-Visual: Show parrot
+Visual: Show parrot 0.5
 
 Yes, their faithful and trusty parrot, Kiddo, who accompanied them on every adventure.
 
@@ -275,7 +275,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 
 	She put her ear to the safe and felt for the tell-tale clicks…
 
-	Visual: Animate Safeopen
+	Visual: Animate Safe Safeopen
 	Audio: Play Safeopen
 
 
