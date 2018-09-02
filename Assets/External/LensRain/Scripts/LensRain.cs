@@ -9,8 +9,8 @@ public class LensRain : PostProcessEffectSettings
 {
 	public BoolParameter debug = new BoolParameter { value = false };
 	[Range(0f, 1f)] public FloatParameter strength = new FloatParameter { value = 0f };
-	[Range(0f, 1f)] public FloatParameter amount = new FloatParameter { value = 0.5f };
-	[Range(0f, 1f)] public FloatParameter size = new FloatParameter { value = 0.5f };
+	[Range(0f, 10f)] public FloatParameter amount = new FloatParameter { value = 0.5f };
+	[Range(0f, 5f)] public FloatParameter size = new FloatParameter { value = 0.5f };
 	[Range(-1f, 1f)] public FloatParameter direction = new FloatParameter { value = 0f };
 }
 
@@ -34,8 +34,6 @@ public sealed class LensRainRenderer : PostProcessEffectRenderer<LensRain>
 	// Called when layer is disabled
 	public override void Release()
 	{
-		if(LensRainRelay.Instance != null) // If RainRelay exists
-			LensRainRelay.Instance.Destroy(); // Call destroy on it
 	}
 
 	// Initialize objects
