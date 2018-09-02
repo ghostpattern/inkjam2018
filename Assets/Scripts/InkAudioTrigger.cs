@@ -11,7 +11,8 @@ public class InkAudioTrigger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    _audioSource = GetComponent<AudioSource>();
+        if(_audioSource == null)
+	        _audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
