@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Land
   m_Shader: {fileID: 4800000, guid: 0c487c4b0d05339408bfd3c94d2fed34, type: 3}
-  m_ShaderKeywords: _FRESNELINVERSION_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -62,7 +62,7 @@ Material:
     - _DistanceOffset: 0
     - _DstBlend: 0
     - _Fresnel: 0.04
-    - _FresnelInversion: 1
+    - _FresnelInversion: 0
     - _FresnelPower: 1.9
     - _FresnelScale: 2.57
     - _GlossMapScale: 1
