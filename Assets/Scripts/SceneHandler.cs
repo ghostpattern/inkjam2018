@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SceneHandler : MonoBehaviourSingleton<SceneHandler>
 {
-    public AudioSource SceneSource;
     public Image Fader;
 
     private bool _transitioning;
@@ -31,7 +30,7 @@ public class SceneHandler : MonoBehaviourSingleton<SceneHandler>
         tween.tweenType = LeanTweenType.easeInOutQuad;
         tween.onComplete = () => Fader.gameObject.SetActive(false);
 
-        LeanTween.value(SceneSource.gameObject, v => SceneSource.volume = v, 0.0f, 1.0f, 5.0f);
+        // LeanTween.value(SceneSource.gameObject, v => SceneSource.volume = v, 0.0f, 1.0f, 5.0f);
     }
 
     void Update()
@@ -47,7 +46,7 @@ public class SceneHandler : MonoBehaviourSingleton<SceneHandler>
         if(_transitioning)
             return;
 
-        LeanTween.cancel(SceneSource.gameObject);
+        // LeanTween.cancel(SceneSource.gameObject);
         LeanTween.cancel(Fader.gameObject);
 
         _transitioning = true;
@@ -56,7 +55,7 @@ public class SceneHandler : MonoBehaviourSingleton<SceneHandler>
         Fader.gameObject.SetActive(true);
         LeanTween.alpha(Fader.rectTransform, 1.0f, fadeTime).tweenType = LeanTweenType.easeInOutQuad;
 
-        LeanTween.value(SceneSource.gameObject, v => SceneSource.volume = v, 1.0f, 0.0f, fadeTime);
+        // LeanTween.value(SceneSource.gameObject, v => SceneSource.volume = v, 1.0f, 0.0f, fadeTime);
 
         StartCoroutine(TransitionCoroutine(sceneName, fadeTime + postFadeTime));
     }
@@ -65,6 +64,6 @@ public class SceneHandler : MonoBehaviourSingleton<SceneHandler>
     {
         yield return new WaitForSeconds(time);
 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 }
