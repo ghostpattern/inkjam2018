@@ -308,6 +308,8 @@ Oh, right, the parrot!
 
 Audio: Play scene2_os_aark
 
+Visual: Animate Bridge Ventopen 2.0
+
 It had been with them the whole time of course, and, with a pat for luck from the bigger brigand, it climbed into a nearby vent.
 
 Audio: Play scene5_os_parrotvent
@@ -315,7 +317,7 @@ They heard it valiantly hop through the maze of ducts, squawking as it hit cross
 
 The syndicalists stood there patiently for several minutes.
 
-Visual: Animate Door Dooropen
+Visual: Animate Bridge Dooropen
 Audio: Play scene5_os_dooropen
 
 But they knew they could trust the parrot.

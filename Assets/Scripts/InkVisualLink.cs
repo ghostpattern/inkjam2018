@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class InkVisualLink : MonoBehaviour
 {
@@ -18,8 +19,18 @@ public class InkVisualLink : MonoBehaviour
             _meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void Animate(string triggerParameter)
+    public void Animate(string triggerParameter, float delayTime = 0.0f)
     {
+        StartCoroutine(AnimateCoroutine(triggerParameter, delayTime));
+    }
+
+    private IEnumerator AnimateCoroutine(string triggerParameter, float delayTime)
+    {
+        if(delayTime > 0)
+        {
+            yield return new WaitForSeconds(delayTime);
+        }
+
         if(_animator != null)
         {
             _animator.SetTrigger(triggerParameter);

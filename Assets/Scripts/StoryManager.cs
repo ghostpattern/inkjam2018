@@ -243,7 +243,13 @@ public class StoryManager : MonoBehaviour
                     {
                         if(commandSplit.Length > 2)
                         {
-                            inkVisualLink.Animate(commandSplit[2]);
+                            float delayTime = 0.0f;
+                            if(commandSplit.Length > 3)
+                            {
+                                float.TryParse(commandSplit[3], out delayTime);
+                            }
+
+                            inkVisualLink.Animate(commandSplit[2], delayTime);
                         }
                     }
                 }
