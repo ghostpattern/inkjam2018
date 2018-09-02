@@ -165,7 +165,7 @@ public class StoryManager : MonoBehaviour
         }
         if(string.Equals(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase))
         {
-            string[] commandSplit = colonSplit[1].Split(' ');
+            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
             if(commandSplit.Length > 0)
             {
                 if(string.Equals(commandSplit[0], "fadein", StringComparison.OrdinalIgnoreCase))
@@ -194,7 +194,7 @@ public class StoryManager : MonoBehaviour
         }
         if(string.Equals(colonSplit[0], "scene", StringComparison.OrdinalIgnoreCase))
         {
-            string[] commandSplit = colonSplit[1].Split(' ');
+            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
             if(commandSplit.Length > 1)
             {
                 if(string.Equals(commandSplit[0], "load", StringComparison.OrdinalIgnoreCase))
