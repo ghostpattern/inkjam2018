@@ -108,17 +108,17 @@ public class StoryManager : MonoBehaviour
         {
             if(colonSplit.Length > 2)
             {
-                InkAudioLink linkedAudio = null;
+                List<InkAudioLink> audioLinkList = new List<InkAudioLink>();
                 InkAudioLink[] audioLinks = FindObjectsOfType<InkAudioLink>();
                 foreach(InkAudioLink inkAudioLink in audioLinks)
                 {
                     if(string.Equals(colonSplit[2], inkAudioLink.Key))
                     {
-                        linkedAudio = inkAudioLink;
+                        audioLinkList.Add(inkAudioLink);
                     }
                 }
 
-                if(linkedAudio != null)
+                foreach(InkAudioLink inkAudioLink in audioLinkList)
                 {
                     if(string.Equals(colonSplit[1], "play", StringComparison.OrdinalIgnoreCase))
                     {
@@ -130,11 +130,11 @@ public class StoryManager : MonoBehaviour
                         Debug.LogFormat("Playing audio: {0} with delay of {1}", colonSplit[1], delayTime);
                         if(delayTime > 0)
                         {
-                            linkedAudio.AudioSource.PlayDelayed(delayTime);
+                            inkAudioLink.AudioSource.PlayDelayed(delayTime);
                         }
                         else
                         {
-                            linkedAudio.AudioSource.Play();
+                            inkAudioLink.AudioSource.Play();
                         }
                     }
                     else if(string.Equals(colonSplit[1], "fadeup", StringComparison.OrdinalIgnoreCase))
@@ -145,7 +145,7 @@ public class StoryManager : MonoBehaviour
                             float.TryParse(colonSplit[3], out fadeTime);
                         }
 
-                        LeanTween.value(linkedAudio.gameObject, v => linkedAudio.AudioSource.volume = v, 0.0f, 1.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
+                        LeanTween.value(inkAudioLink.gameObject, v => inkAudioLink.AudioSource.volume = v, 0.0f, 1.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
                     }
                     else if(string.Equals(colonSplit[1], "fadedown", StringComparison.OrdinalIgnoreCase))
                     {
@@ -155,7 +155,7 @@ public class StoryManager : MonoBehaviour
                             float.TryParse(colonSplit[3], out fadeTime);
                         }
 
-                        LeanTween.value(linkedAudio.gameObject, v => linkedAudio.AudioSource.volume = v, linkedAudio.AudioSource.volume, 0.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
+                        LeanTween.value(inkAudioLink.gameObject, v => inkAudioLink.AudioSource.volume = v, inkAudioLink.AudioSource.volume, 0.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
                     }
                 }
             }
