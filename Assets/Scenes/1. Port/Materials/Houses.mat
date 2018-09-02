@@ -61,9 +61,10 @@ Material:
     - _Distance: 61
     - _DistanceOffset: -24.24
     - _DstBlend: 0
-    - _Fresnel: 0.27
-    - _FresnelPower: 11.65
-    - _FresnelScale: 11
+    - _Fresnel: 0.06
+    - _FresnelInversion: 0
+    - _FresnelPower: 1
+    - _FresnelScale: 0.06
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
