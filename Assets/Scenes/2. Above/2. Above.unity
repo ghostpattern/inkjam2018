@@ -2585,8 +2585,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 0.45
+  m_Range: 15.55
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -11004,7 +11004,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7621cf8de69e16a479ee0512afff6048, type: 2}
+  - {fileID: 2100000, guid: 80d4c1ef59080ef49887872f8209e013, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
