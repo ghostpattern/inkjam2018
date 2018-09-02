@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 213727412}
   - component: {fileID: 213727411}
   - component: {fileID: 213727410}
+  - component: {fileID: 213727413}
   m_Layer: 0
   m_Name: ShipExterior
   m_TagString: Untagged
@@ -688,6 +689,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -64.041, z: 0}
+--- !u!114 &213727413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 213727409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e91b45fcb2794a439d2dbb432111e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 213727412}
+  radius: 0.5
+  minSpeed: 0.1
+  maxSpeed: 0.2
 --- !u!1 &262007339
 GameObject:
   m_ObjectHideFlags: 0
