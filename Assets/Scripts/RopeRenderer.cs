@@ -38,6 +38,8 @@ public class RopeRenderer : MonoBehaviour
 	void Bake()
 	{
 		OnEnable();
+		if (secondaryAnchor == null)
+			return;
 		Update();
 	}
 
