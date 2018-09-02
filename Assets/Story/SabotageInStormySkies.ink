@@ -45,7 +45,7 @@ Rio. Beautiful Rio de Janeiro, after the war.
 
 It was, as it always is, a dark and stormy night.
 
-Audio: Play lightning
+Audio: Play scene1_os_lightning
 
 The passengers and crew were all down in the town - it wasn’t safe up on the ship!
 
@@ -74,7 +74,7 @@ Clad in black, these swashbuckling vagabonds fly grim-faced towards the massive 
 
 Audio: FadeDown scene2_loop_parachute 0.2
 Audio: FadeDown scene2_loop_rainthunder 0.2
-Audio: Play AARK 0.2
+Audio: Play scene2_os_aark 0.2
 
 AARK!
 
@@ -100,7 +100,7 @@ They slammed into the balloon’s canvas, bouncing against it, the wind whipping
 
 Visual: FadeOut 0.1
 Scene: Load 3 0.1
-Audio: Play Slam
+Audio: Play scene3_os_fall
 
 The deck came up to meet them and they slammed down hard.
 
@@ -216,14 +216,14 @@ Can you hear them? How did they do it?
 
 	* * Under the bed.
 
-		Audio: Play Mattress
+		Audio: Play scene4_os_mattress
 		They pulled the mattress up, looked under every slat, but found nothing.
 
 		-> the_code
 
 * * In the desk.
 	
-	Audio: Play Desk
+	Audio: Play scene4_os_desk
 	They pulled open every drawer, finding note paper, fancy pens and inkwells (they used them back in those days.
 
 	But no safe codes!
@@ -232,7 +232,7 @@ Can you hear them? How did they do it?
 	
 	* * On the bookshelf.
 
-	Audio: Play Booshelf
+	Audio: Play scene4_os_bookshelf
 	They flicked through the every books, searching the margins for clues.
 
 But other than discovering some dirty doodles, it was a fruitless endeavour. 
@@ -241,7 +241,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		
 	* * Under the chair.
 
-		Audio: Play Chair
+		Audio: Play scene4_os_chair
 		What - you mean, under the seat?
 
 		Nothing there, unfortunately!
@@ -250,7 +250,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		
 	* * Among his notes.
 
-		Audio: Play Notes
+		Audio: Play scene4_os_notes
 		Ooh this might be the ticket…
 
 		They went through his notes, and pocketed a few that had some salacious details on other foul characters of the bourgeoisie, but nope - no code!
@@ -259,7 +259,7 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		
 	* * In the vase.
 
-		Audio: Play Vase
+		Audio: Play scene4_os_vase
 		They pulled out the flowers from the vase and examined each stem - maybe he’d absentmindedly carved the code one day on a flower-stem!
 
 		But as likely as that would be, no code was forthcoming.
@@ -270,13 +270,13 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 
 * They picked the lock!
 	
-	Audio: Play Safelock
+	Audio: Play scene4_os_safelock
 	Ah yes you’re right - the smaller vagabond had learned the fine art of lockpicking as a child.. but that’s another story.
 
 	She put her ear to the safe and felt for the tell-tale clicks…
 
+	Audio: Play scene4_os_safeopen
 	Visual: Animate Safe Safeopen
-	Audio: Play Safeopen
 
 
 	And in minutes she had it open - the papers were theirs!
@@ -303,17 +303,17 @@ What parrot?
 
 Oh, right, the parrot! 
 
-Audio: Play Ark
+Audio: Play scene2_os_aark
 
 It had been with them the whole time of course, and, with a pat for luck from the bigger brigand, it climbed into a nearby vent.
 
-Audio: Play Parrotvent
+Audio: Play scene5_os_parrotvent
 They heard it valiantly hop through the maze of ducts, squawking as it hit crossroads or dead ends..
 
 The syndicalists stood there patiently for several minutes.
 
 Visual: Animate Dooropen
-Audio: Play Dooropen
+Audio: Play scene5_os_dooropen
 
 But they knew they could trust the parrot.
 
@@ -327,7 +327,7 @@ Audio: FadeUp scene6_loop_rain 0.5
 They were in - they sat down with the manifesto in hand in front of the radio transmitter and prepared to broadcast.
 
 But when they activated the transmitter, sparks jumped and fizzled - the device had been burnt to a crisp, by a bolt of lightning no doubt.
-Audio: Play Radio
+Audio: Play scene6_os_radio
 
 So, what would they do?
 
@@ -353,7 +353,7 @@ They lit the fuse…
 Audio: FadeDown scene7_loop_rainwind 0.5
 Visual: FadeOut 0.5
 
-Audio: Play Explosion
+Audio: Play scene7_os_explosion
 
  The severed cable whipped away into the night.
 
@@ -398,7 +398,7 @@ Audio: FadeDown scene9_loop_thunder 0.2
 
 They in fact, could’ve lived for many years on the wayward vessel!
 
-Audio: Play Gull
+Audio: Play scene10_os_gull
 The food stores were stocked, and they, uh, learned to hunt seabirds! Seagulls and albatrosses and the like.
 
 And the uh, the parrot was still around! It could scavenge for food - you know, brought up herbs and other plants.
