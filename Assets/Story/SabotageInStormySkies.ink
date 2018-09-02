@@ -44,7 +44,7 @@ Audio: FadeUp scene1_loop_town 1
 Rio. Beautiful Rio de Janeiro, after the war.
 
 It was, as it always is, a dark and stormy night.
-
+Visual: trigger lightning
 Audio: Play scene1_os_lightning
 
 The passengers and crew were all down in the town - it wasn’t safe up on the ship!
@@ -69,6 +69,8 @@ I see.. Two figures. Two small figures above the vast Pacific ocean, floating do
 Audio: FadeUp scene2_loop_rainthunder 0.5
 
 It’s some miracle the lightning doesn’t fry their parachutes, but they’ve risked death before.
+Visual: trigger lightning
+Audio: play scene2_os_lightning
 
 Clad in black, these swashbuckling vagabonds fly grim-faced towards the massive blimp.
 
