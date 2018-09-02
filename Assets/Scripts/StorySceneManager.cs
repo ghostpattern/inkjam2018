@@ -12,8 +12,52 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
     private bool _transitioning;
     private string _currentSceneName = null;
 
+    private bool _ignoreInkSceneCommands;
+
+    protected override bool DestroyOnLoad {
+        get { return true; }
+    }
+    protected override void InitSingletonInstance()
+    {
+
+    }
+
+    protected override void DestroySingletonInstance()
+    {
+    }
+
+    void Start()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Fader.gameObject.SetActive(true);
+            Image uiImage = Fader.GetComponent<Image>();
+            uiImage.color = Color.black;
+        }
+        else
+        {
+            if(Application.isEditor)
+            {
+                _ignoreInkSceneCommands = true;
+            }
+        }
+
+        // LeanTween.value(SceneSource.gameObject, v => SceneSource.volume = v, 0.0f, 1.0f, 5.0f);
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
+        {
+            SceneManager.LoadScene("title");
+        }
+    }
+
     public void FadeIn(float time)
     {
+        if(Application.isEditor && _ignoreInkSceneCommands)
+            return;
+
         if(time > 0)
         {
             LTDescr tween = LeanTween.alpha(Fader.rectTransform, 0.0f, time);
@@ -32,6 +76,9 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
 
     public void FadeOut(float time)
     {
+        if(Application.isEditor && _ignoreInkSceneCommands)
+            return;
+
         Fader.gameObject.SetActive(true);
         if(time > 0)
         {
@@ -49,38 +96,12 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
 
     public void LoadScene(int sceneNumber, float delay)
     {
+        if(Application.isEditor && _ignoreInkSceneCommands)
+            return;
+
         int sceneIndex = sceneNumber - 1;
-        
+
         StartCoroutine(LoadSceneAfterDelay(SceneList[sceneIndex], delay));
-    }
-
-    protected override bool DestroyOnLoad {
-        get { return true; }
-    }
-    protected override void InitSingletonInstance()
-    {
-
-    }
-
-    protected override void DestroySingletonInstance()
-    {
-    }
-
-    void Start()
-    {
-        Fader.gameObject.SetActive(true);
-        Image uiImage = Fader.GetComponent<Image>();
-        uiImage.color = Color.black;
-
-        // LeanTween.value(SceneSource.gameObject, v => SceneSource.volume = v, 0.0f, 1.0f, 5.0f);
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.R) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
-        {
-            SceneManager.LoadScene("title");
-        }
     }
 
     public IEnumerator LoadSceneAfterDelay(string sceneName, float delay)
