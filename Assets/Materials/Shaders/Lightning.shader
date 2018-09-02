@@ -52,8 +52,8 @@ Shader "Lightning"
 }
 /*ASEBEGIN
 Version=15600
-2716;167;2234;1152;1194;223;1;True;True
-Node;AmplifyShaderEditor.TexturePropertyNode;4;-919,-116;Float;True;Property;_MainTex;MainTex;1;0;Create;True;0;0;False;0;ec808d915764d3f46956c2800f8e494b;None;False;white;Auto;Texture2D;0;1;SAMPLER2D;0
+2716;161;2234;1158;1194;226;1;True;True
+Node;AmplifyShaderEditor.TexturePropertyNode;4;-919,-116;Float;True;Property;_MainTex;MainTex;1;0;Create;True;0;0;False;0;ec808d915764d3f46956c2800f8e494b;ec808d915764d3f46956c2800f8e494b;False;white;Auto;Texture2D;0;1;SAMPLER2D;0
 Node;AmplifyShaderEditor.RangedFloatNode;6;-928,448;Float;False;Property;_Progression;Progression;3;0;Create;True;0;0;False;0;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SamplerNode;5;-648,150;Float;True;Property;_TextureSample0;Texture Sample 0;2;0;Create;True;0;0;False;0;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.TFHCRemapNode;17;-315,649;Float;False;5;0;FLOAT;0;False;1;FLOAT;0.9;False;2;FLOAT;1;False;3;FLOAT;1;False;4;FLOAT;0;False;1;FLOAT;0
@@ -87,4 +87,4 @@ WireConnection;14;1;23;0
 WireConnection;2;2;3;0
 WireConnection;2;10;14;0
 ASEEND*/
-//CHKSM=807D18A178A83F0DC9A2EC8EEE47BA5DF00B53D8
+//CHKSM=726D71F271E7E24A3AD3183E60C030B2E2070DE2
