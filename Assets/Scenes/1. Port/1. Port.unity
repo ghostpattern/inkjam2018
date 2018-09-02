@@ -1727,6 +1727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627405388}
   - component: {fileID: 627405387}
+  - component: {fileID: 627405389}
   m_Layer: 0
   m_Name: VCam
   m_TagString: Untagged
@@ -1784,6 +1785,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -2.9, y: 29.6, z: 0.002}
+--- !u!114 &627405389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627405386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FocusTracksTarget: 0
+  m_FocusOffset: 0
+  m_Profile: {fileID: 11400000, guid: b74a473a4e0b1584b91af1b2dfcb7b00, type: 2}
 --- !u!1 &667627764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c93361ad64fd64c98104cf2d51c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minInterval: 1
+  minInterval: 2
   maxInterval: 10
   onFire:
     m_PersistentCalls:
