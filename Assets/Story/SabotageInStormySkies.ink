@@ -30,7 +30,8 @@ Do you see it?
 
 * See it?
 
-- Visual: Start Scene 1 // ship moored above town
+- Scene: Load 1 // ship moored above town
+Visual: FadeIn 1.0
 Audio: FadeUp scene1_loop_rain 1
 Audio: FadeUp scene1_loop_town 1
 
@@ -52,15 +53,15 @@ In fact, that’s what our heroes were counting on…
 
 * Heroes? Like, superheroes?
 
-- Visual: Start Scene 2
-
+- Visual: FadeOut 1.0
 Audio: FadeDown scene1_loop_rain 1
 Audio: FadeDown scene1_loop_town 1
+Scene: Load 2 1.0
 
 Yes, just like superheroes!
 
 They are the ones speaking to us.
-
+Visual: FadeIn 1.0
 Audio: FadeUp scene2_loop_parachute 0.5
 
 I see.. Two figures. Two small figures above the vast Pacific ocean, floating down amongst of the storm.
@@ -84,6 +85,9 @@ AARK!
 
 That was just…
 
+Audio: FadeUp scene2_loop_parachute 0.2
+Audio: FadeUp scene2_loop_rainthunder 0.2
+
 The parrot!
 
 Visual: Show parrot
@@ -92,20 +96,18 @@ Yes, their faithful and trusty parrot, Kiddo, who accompanied them on every adve
 
 Anyway!
 
-Audio: FadeUp scene2_loop_parachute 0.2
-Audio: FadeUp scene2_loop_rainthunder 0.2
-
 They slammed into the balloon’s canvas, bouncing against it, the wind whipping their parachutes around..
 
+Visual: FadeOut 0.1
+Scene: Load 3 0.1
 Audio: Play Slam
 
 The deck came up to meet them and they slammed down hard.
 
-Visual: Start Scene 3
-
 Audio: FadeDown scene2_loop_parachute 0.2
 Audio: FadeDown scene2_loop_rainthunder 0.2
 Audio: FadeUp scene3_loop_rain 1
+Visual: FadeIn 1.0
 
 They struggled to their feet amidst the pouring rain, soaked and sopping wet, but determined.
 
@@ -181,8 +183,8 @@ The heroes knew, however, that in his safe, in his room on the ship, were papers
 
 * What happened next?
 
-- Visual: Fade down
-Audio: FadeDown scene3_loop_rain 05
+- Visual: FadeOut 0.5
+Audio: FadeDown scene3_loop_rain 0.5
 Audio: FadeUp scene45_loop_rain
 
 They moved straight into action, and, finding a maintenance hatch, infiltrated the first class deck.
@@ -195,7 +197,8 @@ They were wary of being spotted, even though no one was meant to be on board, be
 
 They found the Candidate’s quarters and jimmied the lock, then slipped inside…
 
-Visual: Start Scene 4
+Scene: Load 4
+Visual: FadeIn 1
 
 There they were, the safe right before them.
 
@@ -272,19 +275,21 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 
 	She put her ear to the safe and felt for the tell-tale clicks…
 
-	Visual: Open Safe
+	Visual: Animate Safeopen
 	Audio: Play Safeopen
 
 
 	And in minutes she had it open - the papers were theirs!
 
-- Visual: Fade down
+- 
+Visual: FadeOut 1
 
 They rushed from the Candidate’s quarters to the bridge - it was time to hijack the air-ways.
 
 They reached the captain’s deck, but the entryway to the bridge was barred!
 
-Visual: Start Scene 5
+Scene: Load 5
+Visual: FadeIn 1
 
 The door was heavy, solid steel - probably the heaviest thing on the ship other than the engines.
 
@@ -307,12 +312,15 @@ They heard it valiantly hop through the maze of ducts, squawking as it hit cross
 
 The syndicalists stood there patiently for several minutes.
 
-Visual: Open Door
+Visual: Animate Dooropen
 Audio: Play Dooropen
 
 But they knew they could trust the parrot.
 
-- Visual: Start Scene 6
+- 
+Visual: FadeOut 0.25
+Scene: Load 6 0.25
+Visual: FadeIn 0.25
 Audio: FadeDown scene45_loop_rain 0.5
 Audio: FadeUp scene6_loop_rain 0.5
 
@@ -329,7 +337,9 @@ So, what would they do?
 
 They could still take a hammer and sickle to the system!
 
-Visual: Start Scene 7
+Visual: FadeOut 0.1
+Scene: Load 7 0.1
+Visual: FadeIn 0.1
 Audio: FadeDown scene6_loop_rain 0.2
 Audio: FadeUp scene7_loop_rainwind 0.2
 
@@ -341,13 +351,14 @@ The lights of the town winked in the distance.
 
 They lit the fuse…
 Audio: FadeDown scene7_loop_rainwind 0.5
-Visual: Fade down
+Visual: FadeOut 0.5
 
 Audio: Play Explosion
 
  The severed cable whipped away into the night.
 
-Visual: Start Scene 8
+Scene: Load 8
+Visual: FadeIn 0.5
 Audio: FadeUp scene8_loop_rainstorm 0.5
 The vagabonds clambered back on to the deck, their mission completed.
 
@@ -359,7 +370,9 @@ But still, there was a chance.
 
 So they waited, and they watched.
 
-Visual: Start Scene 9
+Visual: FadeOut 1.0
+Scene: Load 9 1.0
+Visual: FadeIn 1.0
 Audio: FadeIn scene9_loop_thunder 0.2
 Audio: FadeIn scene910_loop_wind 0.2
 Audio: FadeDown scene8_loop_rainstorm 0.2
@@ -378,7 +391,9 @@ But! Not straight away of course.
 
 Oh no.
 
-Visual: Start Scene 10
+Visual: FadeOut 0.1
+Scene: Load 10 0.1
+Visual: FadeIn 0.1
 Audio: FadeDown scene9_loop_thunder 0.2
 
 They in fact, could’ve lived for many years on the wayward vessel!
@@ -402,7 +417,9 @@ On an empty floating ship above the vastness of the oceans of the world.
 
 * Doesn’t the ship still have its cable attached?
 
-- Oh uh - oh, no.. the candle’s blown out!
+- Visual: FadeOut 0.5
+
+Oh uh - oh, no.. the candle’s blown out!
 
 I’ve lost the connection, dear.
 
@@ -412,7 +429,7 @@ You just have to trust that they’ve told you everything you need to know.
 
 * [But it doesn’t make sense!]
 
-But--
+- But--
 
 Now as my mother always said, butts are for goats.
 
