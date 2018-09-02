@@ -30,6 +30,8 @@ public class SceneData : ScriptableObject
 			return true;
 		}
 
+		EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+
 		for (int i = 0; i < loader.sceneList.Count; i++)
 		{
 			SceneAsset sceneAsset = loader.sceneList[i];
