@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Bed
+  m_Name: Bridge Door
   m_Shader: {fileID: 4800000, guid: 0c487c4b0d05339408bfd3c94d2fed34, type: 3}
   m_ShaderKeywords: _FRESNELINVERSION_ON
   m_LightmapFlags: 0
@@ -58,13 +58,13 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distance: 2.69
-    - _DistanceOffset: 4.11
+    - _Distance: 0.18
+    - _DistanceOffset: 8.44
     - _DstBlend: 0
-    - _Fresnel: 0
+    - _Fresnel: 3.53
     - _FresnelInversion: 1
-    - _FresnelPower: 11.97
-    - _FresnelScale: 7.32
+    - _FresnelPower: 4.82
+    - _FresnelScale: 0.62
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -81,7 +81,7 @@ Material:
     - __dirty: 0
     - _division: 129.6
     m_Colors:
-    - _Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
-    - _ColorFar: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    - _ColorFar: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
