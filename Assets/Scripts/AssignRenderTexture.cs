@@ -23,7 +23,6 @@ public class AssignRenderTexture : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-		CanvasScaler c = _rectTransform.GetComponentInParent<CanvasScaler>();
 		Vector2 size = _rectTransform.rect.size;
 		
 		RenderTexture rT = new RenderTexture( Mathf.RoundToInt(size.x), Mathf.RoundToInt(size.y), 1, RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear);
