@@ -36,19 +36,19 @@ public class DriftMove : MonoBehaviour
 
 	IEnumerator DoDrift()
 	{
-		float third = 1 / 3f;
+//		float third = 1 / 3f;
 		float interpolation = 0;
 		while (true)
 		{
 			float speed = Random.Range(minSpeed, maxSpeed);
-			while (interpolation < third)
+			while (interpolation < 1)
 			{
 				t.position = GetCatmullRomPosition(interpolation, positions[0], positions[1], positions[2], positions[3]);
 				interpolation += Time.deltaTime * speed;
 				yield return null;
 			}
-			while(interpolation > third)
-				interpolation -= third;
+			while(interpolation > 1)
+				interpolation -= 1;
 
 			positions[0] = positions[1];
 			positions[1] = positions[2];
@@ -73,6 +73,14 @@ public class DriftMove : MonoBehaviour
 			Gizmos.DrawLine(lastP, nextP);
 			lastP = nextP;
 		}
+		
+		for (int i = 0; i < positions.Length; i++)
+		{
+			Gizmos.color = Color.Lerp(new Color(1f, 0.35f, 0.96f), new Color(1f, 0.27f, 0.12f), i/(float)(positions.Length-1));
+			Gizmos.DrawRay(positions[i], Vector3.up);
+		}
+
+		Gizmos.color = Color.white;
 	}
 	
 	//Returns a position between 4 Vector3 with Catmull-Rom spline algorithm
