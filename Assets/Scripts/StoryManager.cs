@@ -106,13 +106,14 @@ public class StoryManager : MonoBehaviour
 
         if(string.Equals(colonSplit[0], "audio", StringComparison.OrdinalIgnoreCase))
         {
-            if(colonSplit.Length > 2)
+            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
+            if(commandSplit.Length > 1)
             {
                 List<InkAudioLink> audioLinkList = new List<InkAudioLink>();
                 InkAudioLink[] audioLinks = FindObjectsOfType<InkAudioLink>();
                 foreach(InkAudioLink inkAudioLink in audioLinks)
                 {
-                    if(string.Equals(colonSplit[2], inkAudioLink.Key))
+                    if(string.Equals(commandSplit[1], inkAudioLink.Key))
                     {
                         audioLinkList.Add(inkAudioLink);
                     }
@@ -120,14 +121,14 @@ public class StoryManager : MonoBehaviour
 
                 foreach(InkAudioLink inkAudioLink in audioLinkList)
                 {
-                    if(string.Equals(colonSplit[1], "play", StringComparison.OrdinalIgnoreCase))
+                    if(string.Equals(commandSplit[0], "play", StringComparison.OrdinalIgnoreCase))
                     {
                         float delayTime = 0.0f;
-                        if(colonSplit.Length > 3)
+                        if(commandSplit.Length > 2)
                         {
-                            float.TryParse(colonSplit[3], out delayTime);
+                            float.TryParse(commandSplit[2], out delayTime);
                         }
-                        Debug.LogFormat("Playing audio: {0} with delay of {1}", colonSplit[1], delayTime);
+                        Debug.LogFormat("Playing audio: {0} with delay of {1}", commandSplit[0], delayTime);
                         if(delayTime > 0)
                         {
                             inkAudioLink.AudioSource.PlayDelayed(delayTime);
@@ -137,22 +138,22 @@ public class StoryManager : MonoBehaviour
                             inkAudioLink.AudioSource.Play();
                         }
                     }
-                    else if(string.Equals(colonSplit[1], "fadeup", StringComparison.OrdinalIgnoreCase))
+                    else if(string.Equals(commandSplit[0], "fadeup", StringComparison.OrdinalIgnoreCase))
                     {
                         float fadeTime = 0.0f;
-                        if(colonSplit.Length > 3)
+                        if(commandSplit.Length > 2)
                         {
-                            float.TryParse(colonSplit[3], out fadeTime);
+                            float.TryParse(commandSplit[2], out fadeTime);
                         }
 
                         LeanTween.value(inkAudioLink.gameObject, v => inkAudioLink.AudioSource.volume = v, 0.0f, 1.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
                     }
-                    else if(string.Equals(colonSplit[1], "fadedown", StringComparison.OrdinalIgnoreCase))
+                    else if(string.Equals(commandSplit[0], "fadedown", StringComparison.OrdinalIgnoreCase))
                     {
                         float fadeTime = 0.0f;
-                        if(colonSplit.Length > 3)
+                        if(commandSplit.Length > 2)
                         {
-                            float.TryParse(colonSplit[3], out fadeTime);
+                            float.TryParse(commandSplit[2], out fadeTime);
                         }
 
                         LeanTween.value(inkAudioLink.gameObject, v => inkAudioLink.AudioSource.volume = v, inkAudioLink.AudioSource.volume, 0.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
@@ -162,26 +163,27 @@ public class StoryManager : MonoBehaviour
 
             return true;
         }
-        if(string.Compare(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase) == 0)
+        if(string.Equals(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase))
         {
-            if(colonSplit.Length > 1)
+            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
+            if(commandSplit.Length > 0)
             {
-                if(string.Equals(colonSplit[1], "fadein", StringComparison.OrdinalIgnoreCase))
+                if(string.Equals(commandSplit[0], "fadein", StringComparison.OrdinalIgnoreCase))
                 {
                     float fadeTime = 0.0f;
-                    if(colonSplit.Length > 2)
+                    if(commandSplit.Length > 1)
                     {
-                        float.TryParse(colonSplit[2], out fadeTime);
+                        float.TryParse(commandSplit[1], out fadeTime);
                     }
 
                     StorySceneManager.Instance.FadeIn(fadeTime);
                 }
-                else if(string.Equals(colonSplit[1], "fadeout", StringComparison.OrdinalIgnoreCase))
+                else if(string.Equals(commandSplit[0], "fadeout", StringComparison.OrdinalIgnoreCase))
                 {
                     float fadeTime = 0.0f;
-                    if(colonSplit.Length > 2)
+                    if(commandSplit.Length > 1)
                     {
-                        float.TryParse(colonSplit[2], out fadeTime);
+                        float.TryParse(commandSplit[1], out fadeTime);
                     }
 
                     StorySceneManager.Instance.FadeOut(fadeTime);
@@ -190,24 +192,37 @@ public class StoryManager : MonoBehaviour
 
             return true;
         }
-        if(string.Compare(colonSplit[0], "scene", StringComparison.OrdinalIgnoreCase) == 0)
+        if(string.Equals(colonSplit[0], "scene", StringComparison.OrdinalIgnoreCase))
         {
-            if(colonSplit.Length > 2)
+            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
+            if(commandSplit.Length > 1)
             {
-                if(string.Equals(colonSplit[1], "load", StringComparison.OrdinalIgnoreCase))
+                if(string.Equals(commandSplit[0], "load", StringComparison.OrdinalIgnoreCase))
                 {
                     float delay = 0.0f;
-                    if(colonSplit.Length > 3)
+                    if(commandSplit.Length > 2)
                     {
-                        float.TryParse(colonSplit[3], out delay);
+                        float.TryParse(commandSplit[2], out delay);
                     }
 
                     int sceneNumber;
-                    if(int.TryParse(colonSplit[2], out sceneNumber))
+                    if(int.TryParse(commandSplit[1], out sceneNumber))
                     {
                         StorySceneManager.Instance.LoadScene(sceneNumber, delay);
                     }
+                    else
+                    {
+                        Debug.LogWarningFormat("Couldn't parse '{0}' - couldn't parse int for {1}", value, commandSplit[1]);
+                    }
                 }
+                else
+                {
+                    Debug.LogWarningFormat("Couldn't parse '{0}' - parse command for {1}", value, commandSplit[0]);
+                }
+            }
+            else
+            {
+                Debug.LogWarningFormat("Couldn't parse '{0}' - not enough commands", value);
             }
 
             return true;
