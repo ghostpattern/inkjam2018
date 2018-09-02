@@ -10,6 +10,7 @@ public class StoryManager : MonoBehaviour
     public TextAsset StoryAsset;
     private Story _inkStory;
     private StoryFeed _storyFeed;
+    private float _delayBeforeNextLine;
 
     // Use this for initialization
     void Start()
@@ -24,6 +25,20 @@ public class StoryManager : MonoBehaviour
         while(_inkStory.canContinue)
         {
             string inkLine = _inkStory.Continue();
+
+            while(_delayBeforeNextLine > 0.0f)
+            {
+                _delayBeforeNextLine -= Time.deltaTime;
+                if(_delayBeforeNextLine < 0.0f)
+                    _delayBeforeNextLine = 0.0f;
+
+                yield return null;
+
+                if(Application.isEditor && Input.GetMouseButtonDown(1))
+                {
+                    _delayBeforeNextLine = 0.0f;
+                }
+            }
 
             if(!ParseAction(inkLine))
             {
@@ -291,6 +306,18 @@ public class StoryManager : MonoBehaviour
             {
                 Debug.LogWarningFormat("Couldn't parse '{0}' - not enough commands", value);
             }
+
+            return true;
+        }
+        if(string.Equals(colonSplit[0], "delay", StringComparison.OrdinalIgnoreCase))
+        {
+            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
+            float delayTime = 0.0f;
+            if(commandSplit.Length > 1)
+            {
+                float.TryParse(commandSplit[1], out delayTime);
+            }
+            _delayBeforeNextLine = delayTime;
 
             return true;
         }
