@@ -793,6 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418115227}
   - component: {fileID: 418115226}
+  - component: {fileID: 418115228}
   m_Layer: 0
   m_Name: Vcam
   m_TagString: Untagged
@@ -850,6 +851,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 3.4220002, y: 180.00002, z: 0}
+--- !u!114 &418115228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 418115225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1aade78c6f9cff428bf4209ce5d17e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineVirtualCamera: {fileID: 418115226}
+  speed: 0.5
+  dutch: 1
 --- !u!1 &1327302885
 GameObject:
   m_ObjectHideFlags: 0
