@@ -103,32 +103,67 @@ public class StoryManager : MonoBehaviour
 
         string[] colonSplit = value.Split(':');
 
-        if(string.Compare(colonSplit[0], "audio", StringComparison.OrdinalIgnoreCase) == 0)
+        if(string.Equals(colonSplit[0], "audio", StringComparison.OrdinalIgnoreCase))
         {
-            float delayTime = 0.0f;
             if(colonSplit.Length > 2)
             {
-                float.TryParse(colonSplit[2], out delayTime);
-            }
-            Debug.LogFormat("Playing audio: {0} with delay of {1}", colonSplit[1], delayTime);
-            InkAudioTrigger[] audioTriggers = FindObjectsOfType<InkAudioTrigger>();
-            foreach(InkAudioTrigger inkAudioTrigger in audioTriggers)
-            {
-                if(string.Equals(colonSplit[1], inkAudioTrigger.Key))
+                InkAudioLink linkedAudio = null;
+                InkAudioLink[] audioLinks = FindObjectsOfType<InkAudioLink>();
+                foreach(InkAudioLink inkAudioLink in audioLinks)
                 {
-
-                    if(delayTime > 0)
+                    if(string.Equals(colonSplit[2], inkAudioLink.Key))
                     {
-                        inkAudioTrigger.AudioSource.PlayDelayed(delayTime);
+                        linkedAudio = inkAudioLink;
                     }
-                    else
+                }
+
+                if(linkedAudio != null)
+                {
+                    if(string.Equals(colonSplit[1], "play", StringComparison.OrdinalIgnoreCase))
                     {
-                        inkAudioTrigger.AudioSource.Play();
+                        float delayTime = 0.0f;
+                        if(colonSplit.Length > 3)
+                        {
+                            float.TryParse(colonSplit[3], out delayTime);
+                        }
+                        Debug.LogFormat("Playing audio: {0} with delay of {1}", colonSplit[1], delayTime);
+                        if(delayTime > 0)
+                        {
+                            linkedAudio.AudioSource.PlayDelayed(delayTime);
+                        }
+                        else
+                        {
+                            linkedAudio.AudioSource.Play();
+                        }
+                    }
+                    else if(string.Equals(colonSplit[1], "fadeup", StringComparison.OrdinalIgnoreCase))
+                    {
+                        float fadeTime = 0.0f;
+                        if(colonSplit.Length > 3)
+                        {
+                            float.TryParse(colonSplit[3], out fadeTime);
+                        }
+
+                        LeanTween.value(linkedAudio.gameObject, v => linkedAudio.AudioSource.volume = v, 0.0f, 1.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
+                    }
+                    else if(string.Equals(colonSplit[1], "fadedown", StringComparison.OrdinalIgnoreCase))
+                    {
+                        float fadeTime = 0.0f;
+                        if(colonSplit.Length > 3)
+                        {
+                            float.TryParse(colonSplit[3], out fadeTime);
+                        }
+
+                        LeanTween.value(linkedAudio.gameObject, v => linkedAudio.AudioSource.volume = v, linkedAudio.AudioSource.volume, 0.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
                     }
                 }
             }
 
             return true;
+        }
+        else if(string.Compare(colonSplit[0], "visual", StringComparison.OrdinalIgnoreCase) == 0)
+        {
+            
         }
 
         return false;
