@@ -12,12 +12,15 @@ public enum StoryFeedKey
 
 public class StoryFeed : MonoBehaviour
 {
-    public GameObject LinePrefab;
+    public GameObject LineParent;
+    [UnityEngine.Serialization.FormerlySerializedAs("LinePrefab")]
+    public GameObject LineLeftPrefab;
+    public GameObject LineRightPrefab;
     public GameObject OptionPrefab;
     public Text Title;
     public float MinimumLineDistance;
     public float MinimumLineBuffer;
-    
+
     public static KeyCode[][] SelectionKeys =
     {
         new [] {KeyCode.A, KeyCode.J},
@@ -31,11 +34,9 @@ public class StoryFeed : MonoBehaviour
     };
 
     private readonly Vector3 _initialLinePosition = new Vector3(16.0f, -16.0f, 0.0f);
-    private Vector3 _currLinePosition = new Vector3(16.0f, -16.0f, 0.0f);
+    private float _currLineY = -16.0f;
     private bool _dragMode = false;
     private Vector3 _lastMousePos;
-
-    private GameObject _lineParent;
 
     private readonly List<GameObject> _currentOptionLines = new List<GameObject>();
 
@@ -51,8 +52,11 @@ public class StoryFeed : MonoBehaviour
 
     public void Awake()
     {
-        _lineParent = new GameObject("LineParent");
-        _lineParent.transform.SetParent(transform, false);
+        if (LineParent == null)
+        {
+            LineParent = new GameObject("LineParent");
+            LineParent.transform.SetParent(transform, false);
+        }
 
         Title.color = Color.clear;
     }
@@ -69,35 +73,44 @@ public class StoryFeed : MonoBehaviour
 
     public void Clear()
     {
-        for(int i = 0; i < _lineParent.transform.childCount; i++)
+        for(int i = 0; i < LineParent.transform.childCount; i++)
         {
-            Destroy(_lineParent.transform.GetChild(i).gameObject);
+            Destroy(LineParent.transform.GetChild(i).gameObject);
         }
 
-        _currLinePosition = _initialLinePosition;
-        _lineParent.transform.localPosition = Vector3.zero;
+        _currLineY = _initialLinePosition.y;
+        LineParent.transform.localPosition = Vector3.zero;
     }
 
-    public void DisplayLine(string displayText)
+    public enum Side
     {
-        GameObject line = Instantiate(LinePrefab);
-        line.transform.SetParent(_lineParent.transform, false);
-        line.transform.localPosition = _currLinePosition;
+        Left,
+        Right
+    }
+
+    public void DisplayLine(string displayText, Side side)
+    {
+        GameObject line = Instantiate(side == Side.Left ? LineLeftPrefab : LineRightPrefab, LineParent.transform, false);
+
+        var position = line.transform.localPosition;
+        position.y = _currLineY;
+        line.transform.localPosition = position;
+
         Text text = line.GetComponent<Text>();
         text.text = displayText;
 
         ContentSizeFitter contentSizeFitter = line.GetComponent<ContentSizeFitter>();
         contentSizeFitter.SetLayoutVertical();
 
-        _currLinePosition.y -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
+        _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
 
         RectTransform rectTransform = transform.GetComponent<RectTransform>();
 
-        if(_currLinePosition.y < (_lineParent.transform.localPosition.y - rectTransform.rect.height))
+        if(_currLineY < (LineParent.transform.localPosition.y - rectTransform.rect.height))
         {
-            Vector3 feedPosition = _lineParent.transform.localPosition;
-            feedPosition.y = Mathf.Abs(_currLinePosition.y) - rectTransform.rect.height;
-            _lineParent.transform.localPosition = feedPosition;
+            Vector3 feedPosition = LineParent.transform.localPosition;
+            feedPosition.y = Mathf.Abs(_currLineY) - rectTransform.rect.height;
+            LineParent.transform.localPosition = feedPosition;
         }
 
         _currPerCharacterWriter = line.GetComponent<PerCharacterWriter>();
@@ -122,24 +135,27 @@ public class StoryFeed : MonoBehaviour
         }
         */
 
-        GameObject line = Instantiate(OptionPrefab);
-        line.transform.SetParent(_lineParent.transform, false);
-        line.transform.localPosition = _currLinePosition;
+        GameObject line = Instantiate(OptionPrefab, LineParent.transform, false);
+
+        var position = line.transform.localPosition;
+        position.y = _currLineY;
+        line.transform.localPosition = position;
+
         Text text = line.GetComponent<Text>();
-        text.text = /*inputName + */optionText;
+        text.text = /*inputName + */optionText + "  ●";
 
         ContentSizeFitter contentSizeFitter = line.GetComponent<ContentSizeFitter>();
         contentSizeFitter.SetLayoutVertical();
 
-        _currLinePosition.y -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
+        _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
 
         RectTransform rectTransform = transform.GetComponent<RectTransform>();
 
-        if(_currLinePosition.y < (_lineParent.transform.localPosition.y - rectTransform.rect.height))
+        if(_currLineY < (LineParent.transform.localPosition.y - rectTransform.rect.height))
         {
-            Vector3 feedPosition = _lineParent.transform.localPosition;
-            feedPosition.y = Mathf.Abs(_currLinePosition.y) - rectTransform.rect.height;
-            _lineParent.transform.localPosition = feedPosition;
+            Vector3 feedPosition = LineParent.transform.localPosition;
+            feedPosition.y = Mathf.Abs(_currLineY) - rectTransform.rect.height;
+            LineParent.transform.localPosition = feedPosition;
         }
 
         Button button = line.GetComponent<Button>();
@@ -236,12 +252,12 @@ public class StoryFeed : MonoBehaviour
         // If we have decided that the box should move, move the box
         if (moveFeed)
         {
-            float yMin = Mathf.Abs(_currLinePosition.y) - rectTransform.rect.height;
+            float yMin = Mathf.Abs(_currLineY) - rectTransform.rect.height;
 
-            Vector3 feedPosition = _lineParent.transform.localPosition;
+            Vector3 feedPosition = LineParent.transform.localPosition;
             feedPosition.y += moveAmount;
             feedPosition.y = Mathf.Max(0.0f, Mathf.Min(yMin, feedPosition.y));
-            _lineParent.transform.localPosition = feedPosition;
+            LineParent.transform.localPosition = feedPosition;
         }
     }
 

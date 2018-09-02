@@ -3,16 +3,16 @@
 --- !u!1 &160028
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 6
   m_Component:
-  - 224: {fileID: 22417818}
-  - 222: {fileID: 22232100}
-  - 114: {fileID: 11444956}
-  - 114: {fileID: 11434596}
-  - 114: {fileID: 11454348}
-  - 114: {fileID: 11448230}
+  - component: {fileID: 22417818}
+  - component: {fileID: 22232100}
+  - component: {fileID: 11444956}
+  - component: {fileID: 11434596}
+  - component: {fileID: 11454348}
+  - component: {fileID: 11448230}
   m_Layer: 5
   m_Name: StoryOption
   m_TagString: Untagged
@@ -23,7 +23,7 @@ GameObject:
 --- !u!114 &11434596
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160028}
   m_Enabled: 1
@@ -39,9 +39,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.37694636, g: 0.5180468, b: 0.61764705, a: 1}
-    m_HighlightedColor: {r: 0.33064818, g: 0.45441806, b: 0.541785, a: 1}
-    m_PressedColor: {r: 0.28435, g: 0.3907893, b: 0.46592292, a: 1}
+    m_NormalColor: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 1}
+    m_HighlightedColor: {r: 0.5411765, g: 0.5411765, b: 0.5411765, a: 1}
+    m_PressedColor: {r: 0.46666667, g: 0.46666667, b: 0.46666667, a: 1}
     m_DisabledColor: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -64,7 +64,7 @@ MonoBehaviour:
 --- !u!114 &11444956
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160028}
   m_Enabled: 1
@@ -81,23 +81,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f69694dafe351cf4287a3228e80d0678, type: 3}
+    m_Font: {fileID: 12800000, guid: e47ecc9158d2d31438ed7a9e2a6a29e2, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 3
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option 1
+  m_Text: "Heroes? Like, superheroes!?  \u25CF"
 --- !u!114 &11448230
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160028}
   m_Enabled: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
 --- !u!114 &11454348
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160028}
   m_Enabled: 1
@@ -122,13 +122,14 @@ MonoBehaviour:
 --- !u!222 &22232100
 CanvasRenderer:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160028}
+  m_CullTransparentMesh: 0
 --- !u!224 &22417818
 RectTransform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -137,10 +138,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 136}
+  m_SizeDelta: {x: 16, y: 30.052176}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -279,6 +281,6 @@ Prefab:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 160028}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1

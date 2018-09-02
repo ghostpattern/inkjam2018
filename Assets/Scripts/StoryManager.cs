@@ -32,7 +32,7 @@ public class StoryManager : MonoBehaviour
 
                 delayTime = delayTime < 0.0f ? 2.0f : delayTime;
 
-                _storyFeed.DisplayLine(inkLine);
+                _storyFeed.DisplayLine(inkLine, StoryFeed.Side.Left);
 
                 while(_storyFeed.DisplayingLine)
                 {
