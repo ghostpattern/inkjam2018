@@ -49,7 +49,7 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
     {
         if(Input.GetKeyDown(KeyCode.R) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
         {
-            SceneManager.LoadScene("title");
+            SceneManager.LoadScene("Title");
         }
     }
 
