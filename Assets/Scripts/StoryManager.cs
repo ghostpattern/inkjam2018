@@ -103,12 +103,33 @@ public class StoryManager : MonoBehaviour
 
         string[] colonSplit = value.Split(':');
 
-        //if(string.Compare(colonSplit[0], "sync", StringComparison.OrdinalIgnoreCase) == 0)
-        //{
-        //    DesiredStitch = colonSplit.Length > 1 ? colonSplit[1] : "";
+        if(string.Compare(colonSplit[0], "audio", StringComparison.OrdinalIgnoreCase) == 0)
+        {
+            float delayTime = 0.0f;
+            if(colonSplit.Length > 2)
+            {
+                float.TryParse(colonSplit[2], out delayTime);
+            }
+            Debug.LogFormat("Playing audio: {0} with delay of {1}", colonSplit[1], delayTime);
+            InkAudioTrigger[] audioTriggers = FindObjectsOfType<InkAudioTrigger>();
+            foreach(InkAudioTrigger inkAudioTrigger in audioTriggers)
+            {
+                if(string.Equals(colonSplit[1], inkAudioTrigger.Key))
+                {
 
-        //    return true;
-        //}
+                    if(delayTime > 0)
+                    {
+                        inkAudioTrigger.AudioSource.PlayDelayed(delayTime);
+                    }
+                    else
+                    {
+                        inkAudioTrigger.AudioSource.Play();
+                    }
+                }
+            }
+
+            return true;
+        }
 
         return false;
     }
