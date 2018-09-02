@@ -188,6 +188,73 @@ public class StoryManager : MonoBehaviour
 
                     StorySceneManager.Instance.FadeOut(fadeTime);
                 }
+                else if(string.Equals(commandSplit[0], "trigger"))
+                {
+                    if(string.Equals(commandSplit[1], "lightning", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Lightning[] lightnings = FindObjectsOfType<Lightning>();
+
+                        Lightning lightning = lightnings[UnityEngine.Random.Range(0, lightnings.Length)];
+
+                        float delayTime = 0.0f;
+                        if(commandSplit.Length > 2)
+                        {
+                            float.TryParse(commandSplit[2], out delayTime);
+                        }
+
+                        if(delayTime > 0)
+                        {
+                            lightning.Invoke("DoLightning", delayTime);
+                        }
+                        else
+                        {
+                            lightning.DoLightning();
+                        }
+                    }
+                }
+                else if(string.Equals(commandSplit[0], "animate", StringComparison.OrdinalIgnoreCase))
+                {
+                    List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
+                    InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
+                    foreach(InkVisualLink inkVisualLink in visualLinks)
+                    {
+                        if(string.Equals(commandSplit[1], inkVisualLink.Key))
+                        {
+                            visualLinkList.Add(inkVisualLink);
+                        }
+                    }
+
+                    foreach(InkVisualLink inkVisualLink in visualLinkList)
+                    {
+                        if(commandSplit.Length > 2)
+                        {
+                            inkVisualLink.Animate(commandSplit[2]);
+                        }
+                    }
+                }
+                else if(string.Equals(commandSplit[0], "show", StringComparison.OrdinalIgnoreCase))
+                {
+                    List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
+                    InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
+                    foreach(InkVisualLink inkVisualLink in visualLinks)
+                    {
+                        if(string.Equals(commandSplit[1], inkVisualLink.Key))
+                        {
+                            visualLinkList.Add(inkVisualLink);
+                        }
+                    }
+
+                    foreach(InkVisualLink inkVisualLink in visualLinkList)
+                    {
+                        float fadeTime = 0.0f;
+                        if(commandSplit.Length > 2)
+                        {
+                            float.TryParse(commandSplit[2], out fadeTime);
+                        }
+                        
+                        inkVisualLink.Show(fadeTime);
+                    }
+                }
             }
 
             return true;
