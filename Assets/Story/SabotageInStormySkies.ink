@@ -33,14 +33,14 @@ Do you see it?
 - Scene: Load 1 // ship moored above town
 Visual: FadeIn 1.0
 Audio: FadeUp scene1_loop_rain 1
-Audio: FadeUp scene1_loop_town 1
+
 
 The ship as it once was, decades ago! Majestic and proud, flying above the harbour.
 
 It was at the port city of..
 
 Ah! They’re speaking to me..
-
+Audio: FadeUp scene1_loop_town 1
 Rio. Beautiful Rio de Janeiro, after the war.
 
 It was, as it always is, a dark and stormy night.
