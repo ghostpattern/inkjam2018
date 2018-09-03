@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using Ink.Runtime;
+using UnityEngine.SceneManagement;
 
 public class StoryManager : MonoBehaviour
 {
@@ -80,6 +81,13 @@ public class StoryManager : MonoBehaviour
                 }
             }
         }
+
+        while(Input.GetMouseButtonDown(0) == false)
+        {
+            yield return null;
+        }
+
+        SceneManager.LoadScene("Title");
     }
     private void DisplayCurrentInkChoices()
     {
