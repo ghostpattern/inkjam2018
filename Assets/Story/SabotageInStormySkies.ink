@@ -145,7 +145,9 @@ Ah it doesn't matter.
 
 All you need to know is these were two brave souls, freedom fighters against the growing global capitalist regime.
 
-This luxurious vessel, at that time, was owned by one of the largest *con*-glomerates of the Pacific travel industry.
+They were both indigenous to the land, descendants of the great Incan civilisations, battling against Western colonialist forces.
+
+This luxurious vessel, at that time, was owned by one of the largest *con*-glomerates of the south American travel industry.
 
 Tickets were a thousand pounds a pop, and wealth flowed from the pockets of the idle rich, up to the pockets of the powerful richest.
 
@@ -161,13 +163,13 @@ He was travelling all throughout the southern Americas on the ship, in their mos
 
 A dictator-in-the-making, but one that the heroes knew they could topple.
 
-You see, the CIA at the time were putting puppet leaders in power all across South America - using lies and manipulation to undermine the will of the people.
+You see, for decades the CIA have been trying to put puppet leaders in power all across South America - using lies and manipulation to undermine the will of the people.
 
 Part of their paranoid attack against the Big Red Scare.
 
 The election was coming up soon, and the Candidate's victory was all but certain.
 
-The heroes knew, however, that in his safe, in his room on the ship, were papers that would expose where his true allegiances lay.
+The heroes had intelligence that in his safe, in his room on the ship, were papers that would expose where his true allegiances lay.
 
 -> about_the_mission
 
