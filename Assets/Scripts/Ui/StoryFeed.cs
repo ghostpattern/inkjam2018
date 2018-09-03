@@ -34,7 +34,7 @@ public class StoryFeed : MonoBehaviour
     };
 
     private readonly Vector3 _initialLinePosition = new Vector3(16.0f, -16.0f, 0.0f);
-    private float _currLineY = -16.0f;
+    private float _currLineY = 0.0f;
     private bool _dragMode = false;
     private Vector3 _lastMousePos;
 
@@ -79,7 +79,7 @@ public class StoryFeed : MonoBehaviour
         }
 
         _currLineY = _initialLinePosition.y;
-        LineParent.transform.localPosition = Vector3.zero;
+        LineParent.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
     }
 
     public enum Side
@@ -92,9 +92,9 @@ public class StoryFeed : MonoBehaviour
     {
         GameObject line = Instantiate(side == Side.Left ? LineLeftPrefab : LineRightPrefab, LineParent.transform, false);
 
-        var position = line.transform.localPosition;
+        var position = line.GetComponent<RectTransform>().anchoredPosition;
         position.y = _currLineY;
-        line.transform.localPosition = position;
+        line.GetComponent<RectTransform>().anchoredPosition = position;
 
         Text text = line.GetComponent<Text>();
         text.text = displayText;
@@ -104,14 +104,9 @@ public class StoryFeed : MonoBehaviour
 
         _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
 
-        RectTransform rectTransform = transform.GetComponent<RectTransform>();
-
-        if(_currLineY < (LineParent.transform.localPosition.y - rectTransform.rect.height))
-        {
-            Vector3 feedPosition = LineParent.transform.localPosition;
-            feedPosition.y = Mathf.Abs(_currLineY) - rectTransform.rect.height;
-            LineParent.transform.localPosition = feedPosition;
-        }
+        var feedPosition = LineParent.GetComponent<RectTransform>().anchoredPosition;
+        feedPosition.y = Mathf.Abs(_currLineY);
+        LineParent.GetComponent<RectTransform>().anchoredPosition = feedPosition;
 
         _currPerCharacterWriter = line.GetComponent<PerCharacterWriter>();
     }
@@ -137,9 +132,9 @@ public class StoryFeed : MonoBehaviour
 
         GameObject line = Instantiate(OptionPrefab, LineParent.transform, false);
 
-        var position = line.transform.localPosition;
+        var position = line.GetComponent<RectTransform>().anchoredPosition;
         position.y = _currLineY;
-        line.transform.localPosition = position;
+        line.GetComponent<RectTransform>().anchoredPosition = position;
 
         Text text = line.GetComponent<Text>();
         text.text = /*inputName + */optionText + "  ●";
@@ -149,14 +144,9 @@ public class StoryFeed : MonoBehaviour
 
         _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
 
-        RectTransform rectTransform = transform.GetComponent<RectTransform>();
-
-        if(_currLineY < (LineParent.transform.localPosition.y - rectTransform.rect.height))
-        {
-            Vector3 feedPosition = LineParent.transform.localPosition;
-            feedPosition.y = Mathf.Abs(_currLineY) - rectTransform.rect.height;
-            LineParent.transform.localPosition = feedPosition;
-        }
+        var feedPosition = LineParent.GetComponent<RectTransform>().anchoredPosition;
+        feedPosition.y = Mathf.Abs(_currLineY);
+        LineParent.GetComponent<RectTransform>().anchoredPosition = feedPosition;
 
         Button button = line.GetComponent<Button>();
         button.onClick.AddListener(() =>
@@ -179,7 +169,9 @@ public class StoryFeed : MonoBehaviour
         if(optionToRemove != null)
         {
             _currentOptionLines.Remove(optionToRemove);
-            Destroy(optionToRemove);
+
+            Destroy(optionToRemove.GetComponent<Button>());
+            optionToRemove.GetComponent<Text>().color = Color.black;
         }
     }
 
@@ -250,14 +242,12 @@ public class StoryFeed : MonoBehaviour
         }
 
         // If we have decided that the box should move, move the box
-        if (moveFeed)
+        if (moveFeed && Mathf.Abs(_currLineY) > rectTransform.rect.height)
         {
-            float yMin = Mathf.Abs(_currLineY) - rectTransform.rect.height;
-
-            Vector3 feedPosition = LineParent.transform.localPosition;
+            var feedPosition = LineParent.GetComponent<RectTransform>().anchoredPosition;
             feedPosition.y += moveAmount;
-            feedPosition.y = Mathf.Max(0.0f, Mathf.Min(yMin, feedPosition.y));
-            LineParent.transform.localPosition = feedPosition;
+            feedPosition.y = Mathf.Max(rectTransform.rect.height, Mathf.Min(Mathf.Abs(_currLineY), feedPosition.y));
+            LineParent.GetComponent<RectTransform>().anchoredPosition = feedPosition;
         }
     }
 
