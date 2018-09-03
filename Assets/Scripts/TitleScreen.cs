@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class TitleScreen : MonoBehaviour {
 
     public Image Fader;
+    public AudioSource Audio;
     private bool _fadedIn = false;
     private bool _continuing = false;
     // Use this for initialization
     void Start ()
     {
+        Audio = GetComponentInChildren<AudioSource>();
         Fader.gameObject.SetActive(true);
         Image uiImage = Fader.GetComponent<Image>();
         uiImage.color = Color.black;
@@ -40,6 +42,8 @@ public class TitleScreen : MonoBehaviour {
                 Fader.gameObject.SetActive(false);
                 _fadedIn = true;
             };
+
+            LeanTween.value(Audio.gameObject, val => Audio.volume = val, 0.0f, 1.0f, time);
         }
         else
         {
@@ -59,6 +63,8 @@ public class TitleScreen : MonoBehaviour {
             LTDescr tween = LeanTween.alpha(Fader.rectTransform, 1.0f, time);
             tween.tweenType = LeanTweenType.easeInOutQuad;
             tween.onComplete = () => SceneManager.LoadScene("Master Scene");
+
+            LeanTween.value(Audio.gameObject, val => Audio.volume = val, 1.0f, 0.0f, time);
         }
         else
         {
