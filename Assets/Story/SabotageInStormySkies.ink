@@ -98,10 +98,11 @@ Yes, their faithful and trusty parrot, who accompanied them on every adventure.
 
 Anyway!
 
+Visual: FadeOut 0.5
+
 They flew headlong into the balloon's canvas, bouncing against it, the wind whipping their parachutes around..
 
-Visual: FadeOut 0.1
-Scene: Load 3 0.1
+Scene: Load 3
 Delay: 0.2
 Audio: Play scene3_os_fall 0.75
 
