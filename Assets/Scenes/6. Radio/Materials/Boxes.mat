@@ -62,7 +62,7 @@ Material:
     - _Distance: 1.53
     - _DistanceOffset: 1.57
     - _DstBlend: 0
-    - _Fresnel: 0.36
+    - _Fresnel: 0.26
     - _FresnelInversion: 0
     - _FresnelPower: 2.57
     - _FresnelScale: 1.99
@@ -82,7 +82,7 @@ Material:
     - __dirty: 0
     - _division: 129.6
     m_Colors:
-    - _Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _ColorFar: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}

@@ -24,6 +24,10 @@ ModelImporter:
     100036: pPlane2
     100038: SecondHand
     100040: pCube10
+    100042: Magazines
+    100044: Morse
+    100046: Radio
+    100048: Lights
     400000: //RootNode
     400002: Clock
     400004: Face
@@ -45,6 +49,10 @@ ModelImporter:
     400036: pPlane2
     400038: SecondHand
     400040: pCube10
+    400042: Magazines
+    400044: Morse
+    400046: Radio
+    400048: Lights
     2100000: lambert1
     2100002: lambert2
     2300000: Clock
@@ -67,6 +75,10 @@ ModelImporter:
     2300034: pPlane2
     2300036: SecondHand
     2300038: pCube10
+    2300040: Magazines
+    2300042: Morse
+    2300044: Radio
+    2300046: Lights
     3300000: Clock
     3300002: Face
     3300004: global_magazines
@@ -87,6 +99,10 @@ ModelImporter:
     3300034: pPlane2
     3300036: SecondHand
     3300038: pCube10
+    3300040: Magazines
+    3300042: Morse
+    3300044: Radio
+    3300046: Lights
     4300000: pPlane1
     4300002: global_magazines
     4300004: pCylinder2
@@ -107,6 +123,10 @@ ModelImporter:
     4300034: pCube8
     4300036: Clock
     4300038: pCube10
+    4300040: Magazines
+    4300042: Radio
+    4300044: Morse
+    4300046: Lights
   externalObjects: {}
   materials:
     importMaterials: 0
