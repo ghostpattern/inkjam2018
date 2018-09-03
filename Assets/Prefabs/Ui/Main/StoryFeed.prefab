@@ -63,7 +63,8 @@ MonoBehaviour:
   OptionPrefab: {fileID: 160028, guid: d007012f941be2049b0bd8ae520fc68f, type: 2}
   Title: {fileID: 11484254}
   MinimumLineDistance: 0
-  MinimumLineBuffer: 8
+  MinimumLineBuffer: 48
+  MinimumOptionBuffer: 16
   TitleFadeInTime: 1
   TitleShowTime: 1
   TitleFadeOutTime: 1

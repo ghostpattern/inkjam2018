@@ -87,7 +87,6 @@ public class StoryManager : MonoBehaviour
             int currChoiceIndex = i;
             _storyFeed.DisplayOptionLine(choiceInstance.text, () =>
             {
-                _storyFeed.ClearOptions();
                 _inkStory.ChooseChoiceIndex(currChoiceIndex);
             });
         }

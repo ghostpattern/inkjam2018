@@ -20,6 +20,7 @@ public class StoryFeed : MonoBehaviour
     public Text Title;
     public float MinimumLineDistance;
     public float MinimumLineBuffer;
+    public float MinimumOptionBuffer;
 
     public static KeyCode[][] SelectionKeys =
     {
@@ -33,7 +34,7 @@ public class StoryFeed : MonoBehaviour
         KeyCode.Z, KeyCode.M
     };
 
-    private readonly Vector3 _initialLinePosition = new Vector3(16.0f, -16.0f, 0.0f);
+    private readonly float _initialLineY = 0.0f;
     private float _currLineY = 0.0f;
     private bool _dragMode = false;
     private Vector3 _lastMousePos;
@@ -78,7 +79,7 @@ public class StoryFeed : MonoBehaviour
             Destroy(LineParent.transform.GetChild(i).gameObject);
         }
 
-        _currLineY = _initialLinePosition.y;
+        _currLineY = _initialLineY;
         LineParent.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
     }
 
@@ -90,7 +91,13 @@ public class StoryFeed : MonoBehaviour
 
     public void DisplayLine(string displayText, Side side)
     {
-        GameObject line = Instantiate(side == Side.Left ? LineLeftPrefab : LineRightPrefab, LineParent.transform, false);
+        displayText = displayText.Trim(new char[] { '\n', '\r' });
+
+        GameObject linePrefab = (side == Side.Left ? LineLeftPrefab : LineRightPrefab);
+        GameObject line = Instantiate(linePrefab, LineParent.transform, false);
+
+        if (LineParent.transform.childCount > 1)
+            _currLineY -= MinimumLineBuffer;
 
         var position = line.GetComponent<RectTransform>().anchoredPosition;
         position.y = _currLineY;
@@ -102,7 +109,7 @@ public class StoryFeed : MonoBehaviour
         ContentSizeFitter contentSizeFitter = line.GetComponent<ContentSizeFitter>();
         contentSizeFitter.SetLayoutVertical();
 
-        _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
+        _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height);
 
         var feedPosition = LineParent.GetComponent<RectTransform>().anchoredPosition;
         feedPosition.y = Mathf.Abs(_currLineY);
@@ -113,6 +120,8 @@ public class StoryFeed : MonoBehaviour
 
     public int DisplayOptionLine(string optionText, Action action)
     {
+        optionText = optionText.Trim(new char[] { '\n', '\r' });
+
         int optionNumber = _currentOptionLines.Count;
         KeyCode inputKey = KeyCode.None;
         /*
@@ -132,6 +141,14 @@ public class StoryFeed : MonoBehaviour
 
         GameObject line = Instantiate(OptionPrefab, LineParent.transform, false);
 
+        if (LineParent.transform.childCount > 1)
+        {
+            if (_currentOptionLines.Count == 0)
+                _currLineY -= MinimumLineBuffer * 2f;
+            else
+                _currLineY -= MinimumOptionBuffer;
+        }
+
         var position = line.GetComponent<RectTransform>().anchoredPosition;
         position.y = _currLineY;
         line.GetComponent<RectTransform>().anchoredPosition = position;
@@ -142,7 +159,7 @@ public class StoryFeed : MonoBehaviour
         ContentSizeFitter contentSizeFitter = line.GetComponent<ContentSizeFitter>();
         contentSizeFitter.SetLayoutVertical();
 
-        _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height + MinimumLineBuffer);
+        _currLineY -= Mathf.Max(MinimumLineDistance, line.GetComponent<RectTransform>().rect.height);
 
         var feedPosition = LineParent.GetComponent<RectTransform>().anchoredPosition;
         feedPosition.y = Mathf.Abs(_currLineY);
@@ -151,6 +168,7 @@ public class StoryFeed : MonoBehaviour
         Button button = line.GetComponent<Button>();
         button.onClick.AddListener(() =>
         {
+            SelectOption(button.gameObject);
             action();
             //GetComponent<AudioSource>().Play();
         });
@@ -251,11 +269,20 @@ public class StoryFeed : MonoBehaviour
         }
     }
 
-    public void ClearOptions()
+    public void SelectOption(GameObject option)
     {
         foreach(var currentOptionLine in _currentOptionLines)
         {
-            Destroy(currentOptionLine);
+            Destroy(currentOptionLine.GetComponent<Button>());
+
+            if (GameObject.Equals(currentOptionLine, option))
+            {
+                currentOptionLine.GetComponent<Text>().color = Color.black;
+            }
+            else
+            {
+                currentOptionLine.GetComponent<Text>().color = new Color(0.75f, 0.75f, 0.75f);
+            }
         }
 
         _currentOptionLines.Clear();
