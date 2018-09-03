@@ -104,7 +104,7 @@ They flew headlong into the balloon's canvas, bouncing against it, the wind whip
 
 Scene: Load 3
 Delay: 0.2
-Audio: Play scene3_os_fall 0.75
+Audio: Play scene3_os_fall
 
 The deck came up to meet them and they slammed down hard.
 
