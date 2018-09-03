@@ -11,6 +11,7 @@ public class PerCharacterWriter : MonoBehaviour
     public float PerCharacterSpeed = 1.0f;
     public float PerCharacterDelay = 0.04f;
     public bool Animating { get; private set; }
+    public bool Instant = false;
 
     void Awake()
     {
@@ -40,6 +41,9 @@ public class PerCharacterWriter : MonoBehaviour
             {
                 break;
             }
+
+            if(Instant)
+                break;
 
             yield return null;
         }

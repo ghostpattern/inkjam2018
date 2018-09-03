@@ -116,6 +116,10 @@ public class StoryFeed : MonoBehaviour
         LineParent.GetComponent<RectTransform>().anchoredPosition = feedPosition;
 
         _currPerCharacterWriter = line.GetComponent<PerCharacterWriter>();
+        if(side == Side.Right)
+        {
+            _currPerCharacterWriter.Instant = true;
+        }
     }
 
     public int DisplayOptionLine(string optionText, Action action)
