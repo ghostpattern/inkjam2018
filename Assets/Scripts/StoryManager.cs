@@ -11,6 +11,7 @@ public class StoryManager : MonoBehaviour
     private Story _inkStory;
     private StoryFeed _storyFeed;
     private float _delayBeforeNextLine;
+    private bool _firstAfterChoice = false;
 
     // Use this for initialization
     void Start()
@@ -47,9 +48,10 @@ public class StoryManager : MonoBehaviour
 
                 delayTime = delayTime < 0.0f ? 2.0f : delayTime;
 
-                _storyFeed.DisplayLine(inkLine, StoryFeed.Side.Left);
+                _storyFeed.DisplayLine(inkLine, _firstAfterChoice ? StoryFeed.Side.Right : StoryFeed.Side.Left);
+                _firstAfterChoice = false;
 
-                while(_storyFeed.DisplayingLine)
+                while (_storyFeed.DisplayingLine)
                 {
                     yield return null;
                 }
@@ -87,6 +89,7 @@ public class StoryManager : MonoBehaviour
             int currChoiceIndex = i;
             _storyFeed.DisplayOptionLine(choiceInstance.text, () =>
             {
+                _firstAfterChoice = true;
                 _inkStory.ChooseChoiceIndex(currChoiceIndex);
             });
         }
