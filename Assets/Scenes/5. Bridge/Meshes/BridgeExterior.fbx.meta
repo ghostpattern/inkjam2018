@@ -9,12 +9,14 @@ ModelImporter:
     100006: Ground
     100008: Handle
     100010: Interior
+    100012: VentTunnel
     400000: //RootNode
     400002: BridgeVent
     400004: Door
     400006: Ground
     400008: Handle
     400010: Interior
+    400012: VentTunnel
     2100000: lambert1
     2300000: //RootNode
     2300002: BridgeVent
@@ -22,24 +24,62 @@ ModelImporter:
     2300006: Ground
     2300008: Handle
     2300010: Interior
+    2300012: VentTunnel
     3300000: //RootNode
     3300002: BridgeVent
     3300004: Door
     3300006: Ground
     3300008: Handle
     3300010: Interior
+    3300012: VentTunnel
     4300000: BridgeExterior
     4300002: Interior
     4300004: BridgeVent
     4300006: Ground
     4300008: Door
     4300010: Handle
-  externalObjects: {}
+    4300012: VentTunnel
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_0_mat
+    second: {fileID: 2100000, guid: 69af2a7dce09bb842b4e295d10c615f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_10_mat
+    second: {fileID: 2100000, guid: 89e4b95b372401746b55db58a8b4d0fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_2_mat
+    second: {fileID: 2100000, guid: 571d215c04d9b824780f67fad06e6618, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_3_mat
+    second: {fileID: 2100000, guid: 0d5507db3a812ae428ec6452c877f496, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_4_mat
+    second: {fileID: 2100000, guid: 3ecc57ab730d6df42bc03829f3302acf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_5_mat
+    second: {fileID: 2100000, guid: bf160b92448544449ae701b268981cb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_7_mat
+    second: {fileID: 2100000, guid: 0c9d1600b6481864c86df5814f87100e, type: 2}
   materials:
-    importMaterials: 0
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

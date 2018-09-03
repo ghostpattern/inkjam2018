@@ -4,17 +4,48 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cushion1
+    100004: Cushion2
+    100006: Ornament1
     400000: //RootNode
+    400002: Cushion1
+    400004: Cushion2
+    400006: Ornament1
     2100000: No Name
     2300000: //RootNode
+    2300002: Cushion1
+    2300004: Cushion2
+    2300006: Ornament1
     3300000: //RootNode
+    3300002: Cushion1
+    3300004: Cushion2
+    3300006: Ornament1
     4300000: Cube.009
-  externalObjects: {}
+    4300002: Chair
+    4300004: Ornament1
+    4300006: Cushion2
+    4300008: Cushion1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_4_mat
+    second: {fileID: 2100000, guid: 3ecc57ab730d6df42bc03829f3302acf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_5_mat
+    second: {fileID: 2100000, guid: bf160b92448544449ae701b268981cb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_7_mat
+    second: {fileID: 2100000, guid: 0c9d1600b6481864c86df5814f87100e, type: 2}
   materials:
-    importMaterials: 0
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -40,7 +71,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

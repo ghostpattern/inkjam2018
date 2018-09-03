@@ -4,7 +4,11 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Books
+    100004: BookShelf
     400000: //RootNode
+    400002: Books
+    400004: BookShelf
     2100000: floorboards
     2100002: door
     2100004: ceiling
@@ -12,14 +16,21 @@ ModelImporter:
     2100008: corridor_wall
     2100010: patientRoom_plain
     2300000: //RootNode
+    2300002: Books
+    2300004: BookShelf
     3300000: //RootNode
+    3300002: Books
+    3300004: BookShelf
     4300000: room_01 ceiling.009
+    4300002: BedroomInterior
+    4300004: BookShelf
+    4300006: Books
   externalObjects: {}
   materials:
-    importMaterials: 0
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -45,7 +56,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

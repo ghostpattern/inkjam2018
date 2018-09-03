@@ -1,36 +1,21 @@
 fileFormatVersion: 2
-guid: b5e8551e049754a4383b6043814bbc7c
+guid: 09a0d9275b860c64dbefbad2831f4215
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: bed_doona
-    100002: bedframe
-    100004: //RootNode
-    100006: mattress
-    100008: pillow
-    100010: Ornament
-    400000: bed_doona
-    400002: bedframe
-    400004: //RootNode
-    400006: mattress
-    400008: pillow
-    400010: Ornament
-    2100000: lambert1
-    2300000: bed_doona
-    2300002: bedframe
-    2300004: mattress
-    2300006: pillow
-    2300008: Ornament
-    3300000: bed_doona
-    3300002: bedframe
-    3300004: mattress
-    3300006: pillow
-    3300008: Ornament
-    4300000: bed_doona
-    4300002: bedframe
-    4300004: mattress
-    4300006: pillow
-    4300008: Ornament
+    100000: Flowers
+    100002: //RootNode
+    400000: Flowers
+    400002: //RootNode
+    2100000: Grey_7_mat
+    2100002: Grey_3_mat
+    2100004: Grey_9_mat
+    2300000: Flowers
+    2300002: //RootNode
+    3300000: Flowers
+    3300002: //RootNode
+    4300000: Vase
+    4300002: Flowers
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -62,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -86,7 +71,7 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1

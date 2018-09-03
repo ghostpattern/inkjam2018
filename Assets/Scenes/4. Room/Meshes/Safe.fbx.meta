@@ -6,25 +6,30 @@ ModelImporter:
     100000: Dial
     100002: Door
     100004: //RootNode
+    100006: Legs
     400000: Dial
     400002: Door
     400004: //RootNode
+    400006: Legs
     2100000: lambert1
     2300000: Dial
     2300002: Door
     2300004: //RootNode
+    2300006: Legs
     3300000: Dial
     3300002: Door
     3300004: //RootNode
+    3300006: Legs
     4300000: Safe
     4300002: Door
     4300004: Dial
+    4300006: Legs
   externalObjects: {}
   materials:
-    importMaterials: 0
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
