@@ -319,6 +319,7 @@ They heard it valiantly hop through the maze of ducts, squawking as it hit cross
 The syndicalists stood there patiently for several minutes.
 
 Visual: Animate Bridge Dooropen
+Visual: Animate Parrot Exitbridge 1.0
 Audio: Play scene5_os_dooropen
 
 But they knew they could trust the parrot.

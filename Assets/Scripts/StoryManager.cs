@@ -209,21 +209,24 @@ public class StoryManager : MonoBehaviour
                     {
                         Lightning[] lightnings = FindObjectsOfType<Lightning>();
 
-                        Lightning lightning = lightnings[UnityEngine.Random.Range(0, lightnings.Length)];
+                        if(lightnings.Length > 0)
+                        {
+                            Lightning lightning = lightnings[UnityEngine.Random.Range(0, lightnings.Length)];
 
-                        float delayTime = 0.0f;
-                        if(commandSplit.Length > 2)
-                        {
-                            float.TryParse(commandSplit[2], out delayTime);
-                        }
+                            float delayTime = 0.0f;
+                            if(commandSplit.Length > 2)
+                            {
+                                float.TryParse(commandSplit[2], out delayTime);
+                            }
 
-                        if(delayTime > 0)
-                        {
-                            lightning.Invoke("DoLightning", delayTime);
-                        }
-                        else
-                        {
-                            lightning.DoLightning();
+                            if(delayTime > 0)
+                            {
+                                lightning.Invoke("DoLightning", delayTime);
+                            }
+                            else
+                            {
+                                lightning.DoLightning();
+                            }
                         }
                     }
                 }
