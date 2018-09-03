@@ -17,9 +17,20 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
     protected override bool DestroyOnLoad {
         get { return true; }
     }
+
+    public static bool _firstLoad = true;
+
     protected override void InitSingletonInstance()
     {
-
+        if(Application.isEditor == false)
+        {
+            if(_firstLoad)
+            {
+                _firstLoad = false;
+                SceneManager.LoadScene("Title");
+                Destroy(this);
+            }
+        }
     }
 
     protected override void DestroySingletonInstance()
