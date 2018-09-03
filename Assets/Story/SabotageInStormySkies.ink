@@ -323,6 +323,7 @@ The syndicalists stood there patiently for several minutes.
 Visual: Animate Bridge Dooropen
 Visual: Animate Parrot Exitbridge 1.0
 Audio: Play scene5_os_dooropen
+Audio: Play scene5_os_parrotflap
 
 But they knew they could trust the parrot.
 
