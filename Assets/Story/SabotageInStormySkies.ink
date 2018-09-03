@@ -220,7 +220,7 @@ Can you hear them? How did they do it?
 
 === the_code ===
 
-+ They found it somewhere!
++ {!fall_back} They found it somewhere!
 
 {Ah of course. But where did they search?|So where else did they search?}
 
@@ -275,6 +275,10 @@ But other than discovering some dirty doodles, it was a fruitless endeavour.
 		But as likely as that would be, no code was forthcoming.
 
 		-> the_code
+
+	* * -> fall_back
+		
+	-> the_code
 
 * They picked the lock!
 - 	
@@ -468,3 +472,7 @@ Audio: FadeDown scene910_loop_wind 1
 Delay: 2.0
 
 -> DONE
+
+=== fall_back ===
+Um.. I don't know.
+    -> the_code
