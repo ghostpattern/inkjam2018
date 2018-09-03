@@ -128,7 +128,7 @@ public class StoryManager : MonoBehaviour
                 InkAudioLink[] audioLinks = FindObjectsOfType<InkAudioLink>();
                 foreach(InkAudioLink inkAudioLink in audioLinks)
                 {
-                    if(string.Equals(commandSplit[1], inkAudioLink.Key))
+                    if(string.Equals(commandSplit[1], inkAudioLink.Key, StringComparison.OrdinalIgnoreCase))
                     {
                         audioLinkList.Add(inkAudioLink);
                     }
@@ -249,15 +249,7 @@ public class StoryManager : MonoBehaviour
                 }
                 else if(string.Equals(commandSplit[0], "animate", StringComparison.OrdinalIgnoreCase))
                 {
-                    List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
-                    InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
-                    foreach(InkVisualLink inkVisualLink in visualLinks)
-                    {
-                        if(string.Equals(commandSplit[1], inkVisualLink.Key))
-                        {
-                            visualLinkList.Add(inkVisualLink);
-                        }
-                    }
+                    List<InkVisualLink> visualLinkList = GetVisualLinks(commandSplit[1]);
 
                     foreach(InkVisualLink inkVisualLink in visualLinkList)
                     {
@@ -275,15 +267,7 @@ public class StoryManager : MonoBehaviour
                 }
                 else if(string.Equals(commandSplit[0], "show", StringComparison.OrdinalIgnoreCase))
                 {
-                    List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
-                    InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
-                    foreach(InkVisualLink inkVisualLink in visualLinks)
-                    {
-                        if(string.Equals(commandSplit[1], inkVisualLink.Key))
-                        {
-                            visualLinkList.Add(inkVisualLink);
-                        }
-                    }
+                    List<InkVisualLink> visualLinkList = GetVisualLinks(commandSplit[1]);
 
                     foreach(InkVisualLink inkVisualLink in visualLinkList)
                     {
@@ -298,15 +282,7 @@ public class StoryManager : MonoBehaviour
                 }
                 else if(string.Equals(commandSplit[0], "hide", StringComparison.OrdinalIgnoreCase))
                 {
-                    List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
-                    InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
-                    foreach(InkVisualLink inkVisualLink in visualLinks)
-                    {
-                        if(string.Equals(commandSplit[1], inkVisualLink.Key))
-                        {
-                            visualLinkList.Add(inkVisualLink);
-                        }
-                    }
+                    List<InkVisualLink> visualLinkList = GetVisualLinks(commandSplit[1]);
 
                     foreach(InkVisualLink inkVisualLink in visualLinkList)
                     {
@@ -373,4 +349,18 @@ public class StoryManager : MonoBehaviour
         return false;
     }
 
+    private static List<InkVisualLink> GetVisualLinks(string visualLinkKey)
+    {
+        List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
+        InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
+        foreach(InkVisualLink inkVisualLink in visualLinks)
+        {
+            if(string.Equals(visualLinkKey, inkVisualLink.Key, StringComparison.OrdinalIgnoreCase))
+            {
+                visualLinkList.Add(inkVisualLink);
+            }
+        }
+
+        return visualLinkList;
+    }
 }

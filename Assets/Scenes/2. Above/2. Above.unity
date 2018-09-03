@@ -9598,6 +9598,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 140c258ca4584e548a9f5ab24162b73e,
     type: 3}
   m_PrefabInternal: {fileID: 2068364083}
+--- !u!114 &1676513283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676513282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65035f29d2879c94abc902ecc8ab227b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: Parrot
+  _animator: {fileID: 0}
+  _meshRenderer: {fileID: 2068364085}
 --- !u!95 &1676513285
 Animator:
   serializedVersion: 3
@@ -10961,12 +10975,21 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7621cf8de69e16a479ee0512afff6048, type: 2}
+    - target: {fileID: 2300000, guid: 140c258ca4584e548a9f5ab24162b73e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 140c258ca4584e548a9f5ab24162b73e, type: 3}
   m_IsPrefabAsset: 0
 --- !u!4 &2068364084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 140c258ca4584e548a9f5ab24162b73e,
+    type: 3}
+  m_PrefabInternal: {fileID: 2068364083}
+--- !u!23 &2068364085 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 140c258ca4584e548a9f5ab24162b73e,
     type: 3}
   m_PrefabInternal: {fileID: 2068364083}
 --- !u!1 &2102994674

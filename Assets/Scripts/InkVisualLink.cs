@@ -47,7 +47,6 @@ public class InkVisualLink : MonoBehaviour
         {
             _meshRenderer.enabled = true;
             
-            // maybe this is all bad - JSB
             if(fadeTime > 0)
             {
                 LeanTween.value(_meshRenderer.gameObject, v =>
@@ -74,7 +73,6 @@ public class InkVisualLink : MonoBehaviour
     {
         if(_meshRenderer != null)
         {
-            // maybe this is all bad - JSB
             if(fadeTime > 0)
             {
                 LeanTween.value(_meshRenderer.gameObject, v =>

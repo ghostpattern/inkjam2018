@@ -92,17 +92,18 @@ Audio: FadeUp scene2_loop_rainthunder 0.2
 
 The parrot!
 
-Visual: Show parrot 0.5
+Visual: Show Parrot 0.5
 
 Yes, their faithful and trusty parrot, who accompanied them on every adventure.
 
 Anyway!
 
-They slammed into the balloon's canvas, bouncing against it, the wind whipping their parachutes around..
+They flew headlong into the balloon's canvas, bouncing against it, the wind whipping their parachutes around..
 
 Visual: FadeOut 0.1
 Scene: Load 3 0.1
-Audio: Play scene3_os_fall
+Delay: 0.2
+Audio: Play scene3_os_fall 0.75
 
 The deck came up to meet them and they slammed down hard.
 
