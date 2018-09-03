@@ -347,10 +347,10 @@ They could still take a hammer and sickle to the system!
 
 Audio: FadeDown scene6_loop_rain 0.2
 Audio: FadeUp scene7_loop_rainwind 0.2
-Visual: FadeOut 0.1
-Scene: Load 7 0.1
-Delay: 0.125
-Visual: FadeIn 0.1
+Visual: FadeOut 0.4
+Scene: Load 7 0.4
+Delay: 0.425
+Visual: FadeIn 0.4
 
 They rappelled down the side of the ship, lashed about by the icy wind.
 
