@@ -69,4 +69,29 @@ public class InkVisualLink : MonoBehaviour
             Debug.LogWarningFormat("Attempted to show {0} - but object doesn't have an animator component", Key);
         }
     }
+
+    public void Hide(float fadeTime)
+    {
+        if(_meshRenderer != null)
+        {
+            // maybe this is all bad - JSB
+            if(fadeTime > 0)
+            {
+                LeanTween.value(_meshRenderer.gameObject, v =>
+                {
+                    Color c = _meshRenderer.material.color;
+                    c.a = v;
+                    _meshRenderer.material.color = c;
+                }, 1.0f, 0.0f, fadeTime).tweenType = LeanTweenType.easeInOutCubic;
+            }
+            else
+            {
+                _meshRenderer.enabled = false;
+            }
+        }
+        else
+        {
+            Debug.LogWarningFormat("Attempted to show {0} - but object doesn't have an animator component", Key);
+        }
+    }
 }

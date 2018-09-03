@@ -383,6 +383,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!23 &64547028 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 6f89e958098a15d429d7e321fb1aa477,
+    type: 3}
+  m_PrefabInternal: {fileID: 64547024}
+--- !u!114 &64547029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64547025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65035f29d2879c94abc902ecc8ab227b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: Dynamite
+  _animator: {fileID: 0}
+  _meshRenderer: {fileID: 64547028}
 --- !u!1 &69898379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5232,6 +5251,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1662719929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662719927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65035f29d2879c94abc902ecc8ab227b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: Cable
+  _animator: {fileID: 1662719928}
+  _meshRenderer: {fileID: 0}
 --- !u!4 &1662719930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1600298356a5fc94480f4f0a309e3f54,

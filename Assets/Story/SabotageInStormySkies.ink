@@ -284,7 +284,7 @@ Visual: Animate Safe Safeopen
 
 And in minutes she had it open - the papers were theirs!
 
-Delay: 1.0
+Delay: 2.0
 
 Visual: FadeOut 1
 
@@ -363,7 +363,9 @@ Audio: FadeDown scene7_loop_rainwind 0.5
 
 Delay: 2.5
 
-Visual: trigger explosion 2.0
+Visual: trigger explosion
+Visual: Animate Cable Cablefall
+Visual: Hide Dynamite
 Audio: Play scene7_os_explosion 1.0
 
 The severed cable whipped away into the night.

@@ -296,6 +296,29 @@ public class StoryManager : MonoBehaviour
                         inkVisualLink.Show(fadeTime);
                     }
                 }
+                else if(string.Equals(commandSplit[0], "hide", StringComparison.OrdinalIgnoreCase))
+                {
+                    List<InkVisualLink> visualLinkList = new List<InkVisualLink>();
+                    InkVisualLink[] visualLinks = FindObjectsOfType<InkVisualLink>();
+                    foreach(InkVisualLink inkVisualLink in visualLinks)
+                    {
+                        if(string.Equals(commandSplit[1], inkVisualLink.Key))
+                        {
+                            visualLinkList.Add(inkVisualLink);
+                        }
+                    }
+
+                    foreach(InkVisualLink inkVisualLink in visualLinkList)
+                    {
+                        float fadeTime = 0.0f;
+                        if(commandSplit.Length > 2)
+                        {
+                            float.TryParse(commandSplit[2], out fadeTime);
+                        }
+
+                        inkVisualLink.Hide(fadeTime);
+                    }
+                }
             }
 
             return true;
@@ -337,11 +360,10 @@ public class StoryManager : MonoBehaviour
         }
         if(string.Equals(colonSplit[0], "delay", StringComparison.OrdinalIgnoreCase))
         {
-            string[] commandSplit = colonSplit[1].Trim(' ').Split(' ');
             float delayTime = 0.0f;
-            if(commandSplit.Length > 1)
+            if(colonSplit.Length > 1)
             {
-                float.TryParse(commandSplit[1], out delayTime);
+                float.TryParse(colonSplit[1], out delayTime);
             }
             _delayBeforeNextLine = delayTime;
 
