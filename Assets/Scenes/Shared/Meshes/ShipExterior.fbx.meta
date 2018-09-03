@@ -5,21 +5,51 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Balloon
     100002: //RootNode
+    100004: Back
+    100006: Balloon1
+    100008: Balloon2
+    100010: Balloon3
+    100012: Fan1
+    100014: Fan2
     400000: Balloon
     400002: //RootNode
+    400004: Back
+    400006: Balloon1
+    400008: Balloon2
+    400010: Balloon3
+    400012: Fan1
+    400014: Fan2
     2100000: lambert1
     2300000: Balloon
     2300002: //RootNode
+    2300004: Back
+    2300006: Balloon1
+    2300008: Balloon2
+    2300010: Balloon3
+    2300012: Fan1
+    2300014: Fan2
     3300000: Balloon
     3300002: //RootNode
+    3300004: Back
+    3300006: Balloon1
+    3300008: Balloon2
+    3300010: Balloon3
+    3300012: Fan1
+    3300014: Fan2
     4300000: ShipExterior
     4300002: Balloon
+    4300004: Balloon1
+    4300006: Balloon3
+    4300008: Balloon2
+    4300010: Back
+    4300012: Fan2
+    4300014: Fan1
   externalObjects: {}
   materials:
-    importMaterials: 0
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
