@@ -229,6 +229,23 @@ public class StoryManager : MonoBehaviour
                             }
                         }
                     }
+                    else if(string.Equals(commandSplit[1], "explosion", StringComparison.OrdinalIgnoreCase))
+                    {
+                        float delayTime = 0.0f;
+                        if(commandSplit.Length > 2)
+                        {
+                            float.TryParse(commandSplit[2], out delayTime);
+                        }
+
+                        Explosion[] explosions = FindObjectsOfType<Explosion>();
+                        foreach(Explosion explosion in explosions)
+                        {
+                            if(delayTime > 0)
+                                explosion.Invoke("DoExplosion", delayTime);
+                            else
+                                explosion.DoExplosion();
+                        }
+                    }
                 }
                 else if(string.Equals(commandSplit[0], "animate", StringComparison.OrdinalIgnoreCase))
                 {

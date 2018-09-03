@@ -360,14 +360,15 @@ The lights of the town winked in the distance.
 
 They lit the fuse...
 Audio: FadeDown scene7_loop_rainwind 0.5
-Visual: FadeOut 0.5
 
 Delay: 2.5
 
+Visual: trigger explosion 2.0
 Audio: Play scene7_os_explosion 1.0
 
 The severed cable whipped away into the night.
-
+Visual: FadeOut 0.5
+Delay: 1.0
 Scene: Load 8
 Visual: FadeIn 0.5
 Audio: FadeUp scene8_loop_rainstorm 0.5
