@@ -43,7 +43,7 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
         {
             Fader.gameObject.SetActive(true);
             Image uiImage = Fader.GetComponent<Image>();
-            uiImage.color = Color.black;
+            uiImage.color = Color.white;
         }
         else
         {
@@ -91,6 +91,8 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
             return;
 
         Fader.gameObject.SetActive(true);
+        Image uiImage = Fader.GetComponent<Image>();
+        uiImage.color = Color.white;
         if(time > 0)
         {
             LTDescr tween = LeanTween.alpha(Fader.rectTransform, 1.0f, time);
@@ -98,7 +100,6 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
         }
         else
         {
-            Image uiImage = Fader.GetComponent<Image>();
             Color c = uiImage.color;
             c.a = 1.0f;
             uiImage.color = c;
