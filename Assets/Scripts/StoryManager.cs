@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StoryManager : MonoBehaviour
 {
@@ -24,6 +25,32 @@ public class StoryManager : MonoBehaviour
 
     private IEnumerator ProcessStory()
     {
+        if(_storyFeed.Title != null)
+        {
+            LeanTween.value(_storyFeed.Title.gameObject, val =>
+            {
+                Color color = _storyFeed.Title.color;
+                color.a = val;
+                _storyFeed.Title.color = color;
+            }, 0.0f, 1.0f, _storyFeed.TitleFadeInTime);
+
+            yield return new WaitForSeconds(_storyFeed.TitleFadeInTime + _storyFeed.TitleShowTime);
+
+            while(Input.GetMouseButtonDown(0) == false)
+            {
+                yield return null;
+            }
+
+            LeanTween.value(_storyFeed.Title.gameObject, val =>
+            {
+                Color color = _storyFeed.Title.color;
+                color.a = val;
+                _storyFeed.Title.color = color;
+            }, 1.0f, 0.0f, _storyFeed.TitleFadeOutTime);
+
+            yield return new WaitForSeconds(_storyFeed.TitleFadeOutTime);
+        }
+        
         while(_inkStory.canContinue)
         {
             string inkLine = _inkStory.Continue();
@@ -87,7 +114,7 @@ public class StoryManager : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("Master Scene");
     }
     private void DisplayCurrentInkChoices()
     {

@@ -27,8 +27,8 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
             if(_firstLoad)
             {
                 _firstLoad = false;
-                SceneManager.LoadScene("Title");
-                Destroy(this);
+                // SceneManager.LoadScene("Title");
+                // Destroy(this);
             }
         }
     }
@@ -60,7 +60,7 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
     {
         if(Input.GetKeyDown(KeyCode.R) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
         {
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("Master Scene");
         }
     }
 
