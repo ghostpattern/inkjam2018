@@ -447,7 +447,7 @@ On an listless floating ship, above the vast emptiness of the oceans of the worl
 
 * Didn't the ship wash up here with its cable attached?
 
-- Visual: FadeOut 0.5
+- Visual: FadeOut 0.5 white
 
 Oh uh - oh, no.. the candle's blown out!
 

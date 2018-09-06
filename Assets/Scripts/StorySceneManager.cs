@@ -85,14 +85,18 @@ public class StorySceneManager : MonoBehaviourSingleton<StorySceneManager>
         }
     }
 
-    public void FadeOut(float time)
+    public void FadeOut(float time, Color color = default(Color))
     {
         if(Application.isEditor && _ignoreInkSceneCommands)
             return;
 
         Fader.gameObject.SetActive(true);
+        if(color == default(Color))
+        {
+            color = Color.black;
+        }
         Image uiImage = Fader.GetComponent<Image>();
-        uiImage.color = Color.white;
+        uiImage.color = color;
         if(time > 0)
         {
             LTDescr tween = LeanTween.alpha(Fader.rectTransform, 1.0f, time);

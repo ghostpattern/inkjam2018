@@ -210,8 +210,16 @@ public class StoryManager : MonoBehaviour
                     {
                         float.TryParse(commandSplit[1], out fadeTime);
                     }
+                    Color fadeColor = Color.black;
+                    if(commandSplit.Length > 2)
+                    {
+                        if(string.Equals(commandSplit[2], "white", StringComparison.OrdinalIgnoreCase))
+                        {
+                            fadeColor = Color.white;
+                        }
+                    }
 
-                    StorySceneManager.Instance.FadeOut(fadeTime);
+                    StorySceneManager.Instance.FadeOut(fadeTime, fadeColor);
                 }
                 else if(string.Equals(commandSplit[0], "trigger"))
                 {
